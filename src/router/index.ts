@@ -24,6 +24,11 @@ const router = createRouter({
       name: 'support',
       component: () => import('../views/SupportView.vue'),
     },
+    {
+      path: '/:catchAll(.*)',
+      name: 'home',
+      component: HomeView,
+    },
   ],
 })
 

@@ -1,26 +1,6 @@
 <template>
   <div class="home">
-    <nav class="navbar">
-      <div class="nav-container">
-        <div class="nav-left">
-          <div class="logo">
-            <span class="logo-icon">P</span>
-            <span class="logo-text">Paste</span>
-          </div>
-        </div>
-        <div class="nav-center">
-          <a href="#" class="nav-link">Use Cases</a>
-          <a href="#" class="nav-link">Help</a>
-          <a href="#" class="nav-link">Blog</a>
-          <a href="#" class="nav-link">Updates</a>
-          <a href="#" class="nav-link">Pricing</a>
-        </div>
-        <div class="nav-right">
-          <button class="cta-button">Try for free</button>
-        </div>
-      </div>
-    </nav>
-
+    <Header></Header>
     <section class="hero">
       <div class="hero-image">
         <!--  <img src="/hero-devices.png" alt="Paste app on multiple devices" />-->
@@ -42,87 +22,13 @@
 </template>
 
 <script setup lang="ts">
+import Header from '../components/Header.vue';
 </script>
 
 <style scoped>
 .home {
   min-height: 100vh;
   background: #fff;
-}
-
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  z-index: 100;
-  padding: 12px 0;
-}
-
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-left {
-  flex: 1;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.logo-icon {
-  width: 32px;
-  height: 32px;
-  background: linear-gradient(135deg, #FF9500 0%, #FF6B00 100%);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 700;
-  font-size: 20px;
-}
-
-.logo-text {
-  font-size: 20px;
-  font-weight: 600;
-  color: #000;
-}
-
-.nav-center {
-  display: flex;
-  gap: 32px;
-  flex: 2;
-  justify-content: center;
-}
-
-.nav-link {
-  color: #000;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 400;
-  transition: color 0.2s;
-}
-
-.nav-link:hover {
-  color: #007AFF;
-}
-
-.nav-right {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
 }
 
 .cta-button {
