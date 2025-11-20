@@ -6,9 +6,9 @@
         <!--  <img src="/hero-devices.png" alt="Paste app on multiple devices" />-->
       </div>
       <div class="hero-content">
-        <h1 class="hero-title" v-html="headline"></h1>
-        <p class="hero-description" v-html="description"></p>
-        <button class="cta-button-large">{{ ctaButtonText }}</button>
+        <h1 class="hero-title" v-html="config.headline"></h1>
+        <p class="hero-description" v-html="config.description"></p>
+        <button class="cta-button-large">{{ config.ctaButtonText }}</button>
       </div>
     </section>
     <Footer></Footer>
@@ -18,11 +18,9 @@
 <script setup lang="ts">
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
+import { inject } from 'vue'
 
-const ctaButtonText = 'Try for free';
-const headline = 'Your clipboard,<br /> supercharged and secure';
-const description =
-  'Paste keeps everything you copy organized and searchable. Lightweight,<br />intuitive, packed with smart features, and private by design.';
+const config: any = inject('config')
 </script>
 
 <style scoped>

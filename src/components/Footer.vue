@@ -8,7 +8,7 @@
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h4 class="footer-title">{{ appName }}</h4>
+                    <h4 class="footer-title">{{ config.appName }}</h4>
                     <ul class="footer-links">
                         <li><a href="#" class="footer-link">Try for Free</a></li>
                         <li><a href="#" class="footer-link">Get on Setapp</a></li>
@@ -63,7 +63,7 @@
             </div>
             <div class="footer-divider"></div>
             <div class="footer-bottom">
-                <p class="footer-copyright">© {{ year }} {{ copyrightCompany }}. All rights reserved.</p>
+                <p class="footer-copyright">© {{ year }} {{ config.copyrightCompany }}. All rights reserved.</p>
                 <!--<p class="footer-trademark">All trademarks are the property of their respective owners.</p>-->
             </div>
         </div>
@@ -71,9 +71,10 @@
 </template>
 
 <script setup lang="ts">
+import { inject } from 'vue'
+
+const config: any = inject('config')
 const year = new Date().getFullYear();
-const copyrightCompany = 'Alex Polan';
-const appName = 'Paste';
 </script>
 
 <style scoped>

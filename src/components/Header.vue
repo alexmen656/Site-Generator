@@ -4,14 +4,14 @@
             <div class="nav-left">
                 <div class="logo">
                     <span class="logo-icon">P</span>
-                    <span @click="router.push('/')" class="logo-text">{{ appName }}</span>
+                    <span @click="router.push('/')" class="logo-text">{{ config.appName }}</span>
                 </div>
             </div>
             <div class="nav-center">
-                <a :href="link.href" class="nav-link" v-for="link in links" :key="link.name">{{ link.name }}</a>
+                <a :href="link.href" class="nav-link" v-for="link in config.links" :key="link.name">{{ link.name }}</a>
             </div>
             <div class="nav-right">
-                <button class="cta-button">Try for free</button>
+                <button class="cta-button">{{ config.ctaButtonText }}</button>
             </div>
         </div>
     </nav>
@@ -19,17 +19,10 @@
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
+import { inject } from 'vue'
+
+const config: any = inject('config')
 const router = useRouter();
-
-const appName = "Paste";
-
-const links = [
-    { name: 'Use Cases', href: '#' },
-    { name: 'Support', href: '/support' },
-    { name: 'Blog', href: '#' },
-    { name: 'Updates', href: '#' },
-    { name: 'Pricing', href: '#' },
-];
 </script>
 
 <style scoped>

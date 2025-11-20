@@ -18,7 +18,6 @@
         <section class="getting-started">
             <div class="section-container">
                 <h2 class="section-title">Getting started</h2>
-
                 <div class="cards-grid">
                     <div class="card">
                         <div class="card-icon">
