@@ -17,57 +17,52 @@
         </section>
         <section class="getting-started">
             <div class="section-container">
-                <h2 class="section-title">Getting started</h2>
+                <h2 class="section-title">{{ sectionTitle }}</h2>
                 <div class="cards-grid">
-                    <div class="card">
-                        <div class="card-icon">
-                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                                <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2" />
-                                <path d="M24 14v10m0 0v10m0-10h10m-10 0H14" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" />
-                            </svg>
-                        </div>
-                        <h3 class="card-title">Explore Paste</h3>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon">
-                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                                <rect x="8" y="12" width="32" height="22" rx="2" stroke="currentColor"
-                                    stroke-width="2" />
-                                <path d="M8 18h32M16 34h16" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" />
-                            </svg>
-                        </div>
-                        <h3 class="card-title">Paste on Mac</h3>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon">
-                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                                <rect x="16" y="8" width="16" height="32" rx="2" stroke="currentColor"
-                                    stroke-width="2" />
-                                <circle cx="24" cy="36" r="1.5" fill="currentColor" />
-                            </svg>
-                        </div>
-                        <h3 class="card-title">Paste on iPhone</h3>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon">
-                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                                <rect x="12" y="10" width="24" height="28" rx="2" stroke="currentColor"
-                                    stroke-width="2" />
-                                <circle cx="24" cy="34" r="1.5" fill="currentColor" />
-                            </svg>
-                        </div>
-                        <h3 class="card-title">Paste on iPad</h3>
+                    <div class="card" v-for="card in cards" :key="card.title">
+                        <div class="card-icon" v-html="card.icon"></div>
+                        <h3 class="card-title">{{ card.title }}</h3>
                     </div>
                 </div>
             </div>
         </section>
+        <Footer></Footer>
     </div>
 </template>
 
 <script setup lang="ts">
 import Header from '../components/Header.vue';
+import Footer from '../components/Footer.vue';
+
+const sectionTitle = 'Getting started';
+const cards = [
+    {
+        title: 'Explore Paste', icon: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <rect x="8" y="12" width="32" height="22" rx="2" stroke="currentColor"
+                                    stroke-width="2" />
+                                <path d="M8 18h32M16 34h16" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>` },
+    {
+        title: 'Paste on Mac', icon: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <rect x="8" y="12" width="32" height="22" rx="2" stroke="currentColor"
+                                    stroke-width="2" />
+                                <path d="M8 18h32M16 34h16" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>` },
+    {
+        title: 'Paste on iPhone', icon: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <rect x="16" y="8" width="16" height="32" rx="2" stroke="currentColor"
+                                    stroke-width="2" />
+                                <circle cx="24" cy="36" r="1.5" fill="currentColor" />
+                            </svg>` },
+    {
+        title: 'Paste on iPad', icon: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+            < rect x="12" y="10" width="24" height="28" rx="2" stroke="currentColor"
+                                    stroke- width="2" />
+    <circle cx="24" cy = "34" r = "1.5" fill = "currentColor" />
+    </svg>` }
+];
 </script>
 
 <style scoped>

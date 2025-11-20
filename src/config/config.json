@@ -1,5 +1,6 @@
 {
-  "appName": "Paste",
+  "appName": "Pocket",
+  "appIcon": "256.png",
   "ctaButtonText": "Try for free",
   "headline": "Your clipboard,<br /> supercharged and secure",
   "description": "Paste keeps everything you copy organized and searchable. Lightweight,<br />intuitive, packed with smart features, and private by design.",

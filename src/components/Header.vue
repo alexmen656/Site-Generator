@@ -2,9 +2,10 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-left">
-                <div class="logo">
-                    <span class="logo-icon">P</span>
-                    <span @click="router.push('/')" class="logo-text">{{ config.appName }}</span>
+                <div @click="router.push('/')" class="logo">
+                    <span class="logo-icon"><img :src="'/src/config/assets/' + config.appIcon"
+                            :alt="'Logo of ' + config.appName"></span>
+                    <span class="logo-text">{{ config.appName }}</span>
                 </div>
             </div>
             <div class="nav-center">
@@ -54,6 +55,7 @@ const router = useRouter();
 .logo {
     display: flex;
     align-items: center;
+    cursor: pointer;
     gap: 8px;
 }
 
@@ -68,6 +70,13 @@ const router = useRouter();
     color: white;
     font-weight: 700;
     font-size: 20px;
+    overflow: hidden;
+}
+
+.logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .logo-text {

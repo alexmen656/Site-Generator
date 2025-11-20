@@ -4,13 +4,13 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <span class="logo-icon">P</span>
+                        <img :src="'/src/config/assets/' + config.appIcon" :alt="'Logo of ' + config.appName">
                     </div>
                 </div>
                 <div class="footer-column">
                     <h4 class="footer-title">{{ config.appName }}</h4>
                     <ul class="footer-links">
-                        <li><a :href="link.href" class="footer-link" v-for="link in section1.links" :key="link.name">{{
+                        <li v-for="link in section1.links" :key="link.name"><a :href="link.href" class="footer-link">{{
                             link.name
                                 }}</a></li>
                     </ul>
@@ -119,6 +119,13 @@ const section3 = {
     color: white;
     font-weight: 700;
     font-size: 24px;
+    overflow: hidden;
+}
+
+.footer-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .footer-title {
