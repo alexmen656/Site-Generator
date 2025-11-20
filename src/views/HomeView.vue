@@ -5,24 +5,24 @@
       <div class="hero-image">
         <!--  <img src="/hero-devices.png" alt="Paste app on multiple devices" />-->
       </div>
-
       <div class="hero-content">
-        <h1 class="hero-title">
-          Your clipboard,<br />
-          supercharged and secure
-        </h1>
-        <p class="hero-description">
-          Paste keeps everything you copy organized and searchable. Lightweight,<br />
-          intuitive, packed with smart features, and private by design.
-        </p>
-        <button class="cta-button-large">Try for free</button>
+        <h1 class="hero-title" v-html="headline"></h1>
+        <p class="hero-description" v-html="description"></p>
+        <button class="cta-button-large">{{ ctaButtonText }}</button>
       </div>
     </section>
+    <Footer></Footer>
   </div>
 </template>
 
 <script setup lang="ts">
 import Header from '../components/Header.vue';
+import Footer from '../components/Footer.vue';
+
+const ctaButtonText = 'Try for free';
+const headline = 'Your clipboard,<br /> supercharged and secure';
+const description =
+  'Paste keeps everything you copy organized and searchable. Lightweight,<br />intuitive, packed with smart features, and private by design.';
 </script>
 
 <style scoped>
