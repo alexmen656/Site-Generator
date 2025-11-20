@@ -10,11 +10,9 @@
                 <div class="footer-column">
                     <h4 class="footer-title">{{ config.appName }}</h4>
                     <ul class="footer-links">
-                        <li><a href="#" class="footer-link">Try for Free</a></li>
-                        <li><a href="#" class="footer-link">Get on Setapp</a></li>
-                        <li><a href="#" class="footer-link">Use Cases</a></li>
-                        <li><a href="#" class="footer-link">Updates</a></li>
-                        <li><a href="#" class="footer-link">Pricing</a></li>
+                        <li><a :href="link.href" class="footer-link" v-for="link in section1.links" :key="link.name">{{
+                            link.name
+                                }}</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -22,19 +20,17 @@
                     <ul class="footer-links">
                         <li><a href="#" class="footer-link">Help</a></li>
                         <li><a href="#" class="footer-link">Blog</a></li>
-                        <li><a href="#" class="footer-link">Terms of use</a></li>
-                        <li><a href="#" class="footer-link">Privacy policy</a></li>
+                        <li><router-link to="/terms-of-use" class="footer-link">Terms of use</router-link></li>
+                        <li><router-link to="/privacy-policy" class="footer-link">Privacy policy</router-link></li>
                         <li><a href="#" class="footer-link">Media Kit</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4 class="footer-title">More</h4>
+                    <h4 class="footer-title">{{ section3.title }}</h4>
                     <ul class="footer-links">
-                        <li><a href="#" class="footer-link">About</a></li>
-                        <li><a href="#" class="footer-link">Contact</a></li>
-                        <li><a href="#" class="footer-link">Beta</a></li>
-                        <li><a href="#" class="footer-link">Suggest a feature</a></li>
-                        <li><a href="#" class="footer-link">Jobs</a></li>
+                        <li v-for="link in section3.links" :key="link.name"><a :href="link.href" class="footer-link">{{
+                            link.name
+                                }}</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -75,6 +71,16 @@ import { inject } from 'vue'
 
 const config: any = inject('config')
 const year = new Date().getFullYear();
+
+const section1 = {
+    title: 'Product',
+    links: [{ name: 'Try for Free', href: '/try-for-free' }, { name: 'Get on Setapp', href: '/get-on-setapp' }, { name: 'Use Cases', href: '/use-cases' }, { name: 'Updates', href: '/updates' }, { name: 'Pricing', href: '/pricing' }]
+}
+
+const section3 = {
+    title: 'More',
+    links: [{ name: 'About', href: '/about' }, { name: 'Contact', href: '/contact' }, { name: 'Beta', href: '/beta' }, { name: 'Suggest a feature', href: '/suggest-a-feature' }, { name: 'Jobs', href: '/jobs' }]
+}
 </script>
 
 <style scoped>

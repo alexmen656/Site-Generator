@@ -25,6 +25,16 @@ const router = createRouter({
       component: () => import('../views/SupportView.vue'),
     },
     {
+      path: '/privacy-policy',
+      name: 'privacy-policy',
+      component: () => import('../views/PrivacyPolicy.vue'),
+    },
+    {
+      path: '/terms-of-use',
+      name: 'terms-of-use',
+      component: () => import('../views/TermsOfUse.vue'),
+    },
+    {
       path: '/:catchAll(.*)',
       name: 'home',
       component: HomeView,
