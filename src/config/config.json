@@ -7,9 +7,17 @@
   "links": [
     { "name": "Use Cases", "href": "#" },
     { "name": "Support", "href": "/support" },
-    { "name": "Blog", "href": "#" },
-    { "name": "Updates", "href": "#" },
+    { "name": "Blog", "href": "/blog" },
+    { "name": "Updates", "href": "/updates" },
     { "name": "Pricing", "href": "#" }
   ],
-  "copyrightCompany": "Alex Polan"
+  "copyrightCompany": "Alex Polan",
+  "appStoreLink": "https://apple.com",
+  "googlePlayLink": "https://google.com",
+  "socialLinks": [
+    { "platform": "instagram", "link": "https://instagram.com" },
+    { "platform": "facebook", "link": "https://faceebook.com" },
+    { "platform": "tiktok", "link": "https://tiktok.com" },
+    { "platform": "x", "link": "https://x.com" }
+  ]
 }

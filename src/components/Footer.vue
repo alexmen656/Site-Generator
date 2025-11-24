@@ -36,20 +36,20 @@
                 <div class="footer-column">
                     <h4 class="footer-title">Follow us</h4>
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <a :href="social.link" class="social-link" v-for="social in config.socialLinks"
+                            :aria-label="social.platform[0].toUpperCase() + social.platform.slice(1).toLowerCase()">
+                            <svg v-if="social.platform.toLowerCase() === 'x'" width="20" height="20" viewBox="0 0 20 20"
+                                fill="currentColor">
                                 <path
                                     d="M18.9 2.3c-.7.3-1.4.5-2.2.6.8-.5 1.4-1.3 1.7-2.2-.7.4-1.5.7-2.3.9-.7-.8-1.7-1.3-2.8-1.3-2.1 0-3.8 1.7-3.8 3.8 0 .3 0 .6.1.9-3.2-.2-6-1.7-7.9-4-.3.5-.5 1.1-.5 1.8 0 1.3.7 2.5 1.7 3.2-.6 0-1.2-.2-1.7-.5v.1c0 1.8 1.3 3.4 3 3.8-.3.1-.7.1-1 .1-.3 0-.5 0-.8-.1.5 1.6 2 2.8 3.8 2.8-1.3 1-3 1.6-4.8 1.6-.3 0-.6 0-.9-.1 1.7 1.1 3.8 1.8 6 1.8 7.2 0 11.1-6 11.1-11.1v-.5c.8-.6 1.5-1.3 2-2.1z" />
                             </svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <svg v-if="social.platform.toLowerCase() === 'facebook'" width="20" height="20"
+                                viewBox="0 0 20 20" fill="currentColor">
                                 <path
                                     d="M18 1H2C1.4 1 1 1.4 1 2v16c0 .6.4 1 1 1h8.5v-7h-2.3V9.8h2.3V8.5c0-2.3 1.4-3.6 3.5-3.6 1 0 1.9.1 2.2.1v2.5h-1.5c-1.2 0-1.4.6-1.4 1.4v1.8h2.8l-.4 2.7h-2.4V19H18c.6 0 1-.4 1-1V2c0-.6-.4-1-1-1z" />
                             </svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Mastodon">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <svg v-if="social.platform.toLowerCase() === 'mastodon'" width="20" height="20"
+                                viewBox="0 0 20 20" fill="currentColor">
                                 <path
                                     d="M16.5 3c1.4 0 2.5 1.1 2.5 2.5v9c0 1.4-1.1 2.5-2.5 2.5h-13C2.1 17 1 15.9 1 14.5v-9C1 4.1 2.1 3 3.5 3h13M14.2 6.5c-.7 0-1.2.5-1.2 1.2v2.6h2.4V7.7c0-.7-.5-1.2-1.2-1.2zm-8.4 0c-.7 0-1.2.5-1.2 1.2v2.6H7V7.7c0-.7-.5-1.2-1.2-1.2zm1.2 5.2c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5v3.1h-5v-3.1z" />
                             </svg>

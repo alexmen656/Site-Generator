@@ -11,6 +11,14 @@
         <button class="cta-button-large">{{ config.ctaButtonText }}</button>
       </div>
     </section>
+    <section>
+      <button @click="downloadOnAppStore()">Download on App Store</button>
+      <button @click="downloadOnGooglePlay()">Download on Google Play</button>
+      <img height="100" src="@/config/assets/app_store.svg" alt="Apple App Store Badge">
+      <img height="100" src="@/config/assets/google_play.svg" alt="Google Play Store Badge">
+
+      <img height="500" src="@/config/assets/iphone.png" alt="iPhone showing Pocketz app interface">
+    </section>
     <Footer></Footer>
   </div>
 </template>
@@ -18,9 +26,21 @@
 <script setup lang="ts">
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
+//import { useRouter } from 'vue-router';
 import { inject } from 'vue'
 
 const config: any = inject('config')
+//const router = useRouter();
+
+const downloadOnAppStore = () => {
+  //router.push()
+  location.href = config.appStoreLink
+}
+
+const downloadOnGooglePlay = () => {
+  //router.push()
+  location.href = config.googlePlayLink
+}
 </script>
 
 <style scoped>
