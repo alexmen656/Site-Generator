@@ -2,22 +2,23 @@
   <div class="home">
     <Header></Header>
     <section class="hero">
-      <div class="hero-image">
-        <!--  <img src="/hero-devices.png" alt="Paste app on multiple devices" />-->
-      </div>
+      <!-- <div class="hero-image">
+        <--  <img src="/hero-devices.png" alt="Paste app on multiple devices" />--
+  </div>-->
       <div class="hero-content">
         <h1 class="hero-title" v-html="config.headline"></h1>
         <p class="hero-description" v-html="config.description"></p>
         <button class="cta-button-large">{{ config.ctaButtonText }}</button>
       </div>
     </section>
+    <section class="iphone-section">
+      <img height="500" src="@/config/assets/iphone.png" alt="iPhone showing Pocketz app interface">
+    </section>
     <section>
       <button @click="downloadOnAppStore()">Download on App Store</button>
       <button @click="downloadOnGooglePlay()">Download on Google Play</button>
       <img height="100" src="@/config/assets/app_store.svg" alt="Apple App Store Badge">
       <img height="100" src="@/config/assets/google_play.svg" alt="Google Play Store Badge">
-
-      <img height="500" src="@/config/assets/iphone.png" alt="iPhone showing Pocketz app interface">
     </section>
     <Footer></Footer>
   </div>
@@ -44,6 +45,11 @@ const downloadOnGooglePlay = () => {
 </script>
 
 <style scoped>
+.iphone-section {
+  display: flex;
+  justify-content: center;
+}
+
 .home {
   min-height: 100vh;
   background: #fff;
