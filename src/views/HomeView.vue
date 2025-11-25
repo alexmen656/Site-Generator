@@ -173,6 +173,31 @@
           @click="scrollCarousel(1)"><span>›</span></button><!-- text-align text-center-->
       </div>
     </section>
+    <section class="feature-detail-section">
+      <div class="feature-detail-header">
+        <h2 class="feature-detail-title">Teile deine Daten mit<br />Freunden und Familie.</h2>
+        <p class="feature-detail-description">
+          Mit der Teilen-Funktion kannst du deine Informationen sofort mit deinen Liebsten teilen,
+          damit sie immer auf dem Laufenden bleiben. Füge deine Kontakte einmal hinzu und teile
+          automatisch – ganz ohne manuellen Aufwand.
+        </p>
+      </div>
+      <div class="feature-detail-content">
+        <div class="feature-detail-text">
+          <h3 class="feature-highlight-title">Nie wieder "Kannst du mir die Infos schicken?" hören.</h3>
+          <p class="feature-highlight-description">
+            Wähle aus, mit wem du teilen möchtest. Deine Kontakte können dann selbst entscheiden,
+            welche Benachrichtigungen sie erhalten möchten (z.B. bei Updates, Änderungen und mehr).
+          </p>
+        </div>
+        <div class="feature-detail-phones">
+          <div class="phone-stack">
+            <img src="@/config/assets/iphone.png" alt="App Feature 1" class="phone-back">
+            <img src="@/config/assets/iphone.png" alt="App Feature 2" class="phone-front">
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="reviews-section">
       <h2 class="reviews-title">Was unsere Nutzer sagen.</h2>
       <div class="reviews-grid">
@@ -867,7 +892,171 @@ const scrollCarousel = (direction: number) => {
   }
 }
 
-/* Reviews Section */
+.feature-detail-section {
+  padding: 100px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-detail-header {
+  max-width: 700px;
+  margin-bottom: 80px;
+}
+
+.feature-detail-title {
+  font-size: 56px;
+  font-weight: 700;
+  color: #1d1d1f;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 24px 0;
+}
+
+.feature-detail-description {
+  font-size: 19px;
+  line-height: 1.6;
+  color: #424245;
+  margin: 0;
+}
+
+.feature-detail-content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  background: #f5f5f7;
+  border-radius: 32px;
+  padding: 60px;
+  min-height: 500px;
+}
+
+.feature-detail-text {
+  flex: 1;
+  max-width: 400px;
+}
+
+.feature-highlight-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1d1d1f;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 0 0 20px 0;
+}
+
+.feature-highlight-description {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #424245;
+  margin: 0;
+}
+
+.feature-detail-phones {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone-stack {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 450px;
+}
+
+.phone-stack img {
+  position: absolute;
+  height: 420px;
+  width: auto;
+  filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15));
+  transition: transform 0.4s ease;
+}
+
+.phone-back {
+  left: 0;
+  top: 20px;
+  transform: rotate(-8deg);
+  z-index: 1;
+}
+
+.phone-front {
+  right: 0;
+  top: 0;
+  transform: rotate(5deg);
+  z-index: 2;
+}
+
+.phone-stack:hover .phone-back {
+  transform: rotate(-12deg) translateX(-10px);
+}
+
+.phone-stack:hover .phone-front {
+  transform: rotate(8deg) translateX(10px);
+}
+
+@media (max-width: 1000px) {
+  .feature-detail-content {
+    flex-direction: column;
+    padding: 50px 40px;
+  }
+
+  .feature-detail-text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .phone-stack {
+    height: 380px;
+  }
+
+  .phone-stack img {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .feature-detail-section {
+    padding: 60px 20px;
+  }
+
+  .feature-detail-title {
+    font-size: 36px;
+  }
+
+  .feature-detail-description {
+    font-size: 17px;
+  }
+
+  .feature-detail-header {
+    margin-bottom: 40px;
+  }
+
+  .feature-detail-content {
+    padding: 40px 24px;
+    gap: 40px;
+  }
+
+  .feature-highlight-title {
+    font-size: 24px;
+  }
+
+  .phone-stack {
+    height: 320px;
+  }
+
+  .phone-stack img {
+    height: 280px;
+  }
+
+  .phone-back {
+    left: 10%;
+  }
+
+  .phone-front {
+    right: 10%;
+  }
+}
+
 .reviews-section {
   padding: 80px 40px;
   max-width: 1400px;
@@ -1012,7 +1201,6 @@ const scrollCarousel = (direction: number) => {
   margin-bottom: 12px;
 }
 
-/* Social Video Card */
 .review-video-placeholder {
   position: relative;
   border-radius: 16px;
