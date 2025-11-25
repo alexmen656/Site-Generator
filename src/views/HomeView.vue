@@ -127,6 +127,51 @@
       <img height="100" src="@/config/assets/app_store.svg" alt="Apple App Store Badge">
       <img height="100" src="@/config/assets/google_play.svg" alt="Google Play Store Badge">
     </section>
+    <section class="feature-showcase">
+      <h2 class="showcase-title">Lerne die App kennen.</h2>
+      <div class="showcase-carousel">
+        <div class="showcase-card">
+          <span class="showcase-tag">Produktivität</span>
+          <h3 class="showcase-card-title">Alles an einem Ort.<br />Immer griffbereit.</h3>
+          <div class="showcase-image-container">
+            <img src="@/config/assets/iphone.png" alt="Feature 1">
+          </div>
+        </div>
+        <div class="showcase-card">
+          <span class="showcase-tag">Organisation</span>
+          <h3 class="showcase-card-title">Smart sortiert.<br />Automatisch organisiert.</h3>
+          <div class="showcase-image-container">
+            <img src="@/config/assets/iphone.png" alt="Feature 2">
+          </div>
+        </div>
+        <div class="showcase-card">
+          <span class="showcase-tag">Sicherheit</span>
+          <h3 class="showcase-card-title">Privat und sicher.<br />Von Anfang an.</h3>
+          <div class="showcase-image-container">
+            <img src="@/config/assets/iphone.png" alt="Feature 3">
+          </div>
+        </div>
+        <div class="showcase-card">
+          <span class="showcase-tag">Synchronisation</span>
+          <h3 class="showcase-card-title">Überall dabei.<br />Auf allen Geräten.</h3>
+          <div class="showcase-image-container">
+            <img src="@/config/assets/iphone.png" alt="Feature 4">
+          </div>
+        </div>
+        <div class="showcase-card">
+          <span class="showcase-tag">Suche</span>
+          <h3 class="showcase-card-title">Blitzschnell finden.<br />Nie mehr suchen.</h3>
+          <div class="showcase-image-container">
+            <img src="@/config/assets/iphone.png" alt="Feature 5">
+          </div>
+        </div>
+      </div>
+      <div class="carousel-navigation">
+        <button class="carousel-nav-btn" @click="scrollCarousel(-1)">‹</button>
+        <button class="carousel-nav-btn" @click="scrollCarousel(1)">›</button>
+      </div>
+    </section>
+
     <Footer></Footer>
   </div>
 </template>
@@ -134,20 +179,24 @@
 <script setup lang="ts">
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
-//import { useRouter } from 'vue-router';
 import { inject } from 'vue'
 
 const config: any = inject('config')
-//const router = useRouter();
 
 const downloadOnAppStore = () => {
-  //router.push()
   location.href = config.appStoreLink
 }
 
 const downloadOnGooglePlay = () => {
-  //router.push()
   location.href = config.googlePlayLink
+}
+
+const scrollCarousel = (direction: number) => {
+  const carousel = document.querySelector('.showcase-carousel')
+  if (carousel) {
+    const scrollAmount = 340 * direction
+    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' })
+  }
 }
 </script>
 
@@ -559,6 +608,141 @@ const downloadOnGooglePlay = () => {
 
   .iphone-container img {
     height: 450px;
+  }
+}
+
+.feature-showcase {
+  padding: 80px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.showcase-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #1d1d1f;
+  margin-bottom: 12px;
+  /*40px*/
+  letter-spacing: -0.02em;
+}
+
+.showcase-carousel {
+  display: flex;
+  gap: 12px;
+  /*20*/
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.showcase-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.showcase-card {
+  flex: 0 0 320px;
+  background: linear-gradient(180deg, #1c1c1e 0%, #2c2c2e 100%);
+  border-radius: 24px;
+  padding: 28px 24px 8px 24px;
+  scroll-snap-align: start;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 480px;
+  transition: transform 0.3s ease;
+}
+
+.showcase-card:hover {
+  transform: scale(1.02);
+}
+
+.showcase-tag {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.showcase-card-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.25;
+  margin: 0 0 16px 0;
+  /*24*/
+  letter-spacing: -0.01em;
+}
+
+.showcase-image-container {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0 -24px;
+}
+
+.showcase-image-container img {
+  width: 75%;
+  height: auto;
+  object-fit: contain;
+  object-position: bottom;
+  filter: drop-shadow(0 -10px 30px rgba(0, 0, 0, 0.3));
+}
+
+.carousel-navigation {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.carousel-nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #f5f5f7;
+  color: #1d1d1f;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.carousel-nav-btn:hover {
+  background: #e8e8ed;
+  transform: scale(1.05);
+}
+
+.carousel-nav-btn:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .feature-showcase {
+    padding: 60px 20px;
+  }
+
+  .showcase-title {
+    font-size: 32px;
+  }
+
+  .showcase-card {
+    flex: 0 0 280px;
+    min-height: 400px;
+  }
+
+  .showcase-card-title {
+    font-size: 20px;
   }
 }
 </style>
