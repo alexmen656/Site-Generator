@@ -167,11 +167,132 @@
         </div>
       </div>
       <div class="carousel-navigation">
-        <button class="carousel-nav-btn" @click="scrollCarousel(-1)">‹</button>
-        <button class="carousel-nav-btn" @click="scrollCarousel(1)">›</button>
+        <button class="carousel-nav-btn"
+          @click="scrollCarousel(-1)"><span>‹</span></button><!-- text-align text-center-->
+        <button class="carousel-nav-btn"
+          @click="scrollCarousel(1)"><span>›</span></button><!-- text-align text-center-->
       </div>
     </section>
-
+    <section class="reviews-section">
+      <h2 class="reviews-title">Was unsere Nutzer sagen.</h2>
+      <div class="reviews-grid">
+        <div class="reviews-column">
+          <div class="review-card review-tweet">
+            <div class="review-header">
+              <div class="review-avatar">
+                <span>👨‍💻</span>
+              </div>
+              <div class="review-author">
+                <span class="author-name">Max Mustermann</span>
+                <span class="author-handle">@maxmuster</span>
+              </div>
+            </div>
+            <p class="review-text">
+              Seit ich diese App benutze, hat sich meine Produktivität verdoppelt. Endlich habe ich alles im Griff!
+            </p>
+            <p class="review-text">
+              Klare Empfehlung für alle, die organisiert bleiben wollen. 🙌
+            </p>
+          </div>
+          <div class="review-card review-testimonial">
+            <div class="review-header">
+              <div class="review-avatar">
+                <span>👩</span>
+              </div>
+              <div class="review-author">
+                <span class="author-name">Julia</span>
+                <span class="author-handle">Hat den Tag gerettet!</span>
+              </div>
+              <span class="review-date">Jan 31, 2023</span>
+            </div>
+            <p class="review-text">
+              Letzte Woche hatte ich einen wichtigen Termin geplant. Dank der App wurde ich rechtzeitig erinnert und
+              konnte alles vorbereiten. Ohne sie hätte ich es vergessen!
+            </p>
+          </div>
+        </div>
+        <div class="reviews-column">
+          <div class="review-card review-appstore">
+            <div class="review-header">
+              <span class="review-store-title">Beste App!</span>
+              <span class="review-date">Sep 7, 2024 • von AppFan123</span>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              Diese App ist einfach unglaublich. Sie macht genau das, was sie verspricht – und mehr. Die
+              Benutzeroberfläche ist wunderschön gestaltet, mit viel Liebe zum Detail.
+            </p>
+          </div>
+          <div class="review-card review-social">
+            <div class="review-header">
+              <div class="review-avatar avatar-small">
+                <span>🎬</span>
+              </div>
+              <div class="review-author">
+                <span class="author-name">Tech Reviewer</span>
+                <span class="author-handle">@techreviews • 8h</span>
+              </div>
+            </div>
+            <div class="review-video-placeholder">
+              <div class="video-overlay">
+                <span class="video-caption">Meine neue Lieblings-App</span>
+              </div>
+              <img src="@/config/assets/iphone.png" alt="Video preview" class="video-preview-img">
+            </div>
+            <div class="review-social-footer">
+              <div class="social-avatars">
+                <span class="mini-avatar">👤</span>
+                <span class="mini-avatar">👤</span>
+                <span class="mini-avatar">👤</span>
+              </div>
+              <span class="social-stat">+3 Millionen Nutzer lieben diese App</span>
+              <button class="view-more-btn">View more +</button>
+            </div>
+          </div>
+        </div>
+        <div class="reviews-column">
+          <div class="review-card review-tweet">
+            <div class="review-header">
+              <div class="review-avatar">
+                <span>👨‍🎨</span>
+              </div>
+              <div class="review-author">
+                <span class="author-name">Peter Schmidt</span>
+                <span class="author-handle">@peterschmidt</span>
+              </div>
+            </div>
+            <p class="review-text">
+              Eine der durchdachtesten und am besten umgesetzten Apps, die ich je benutzt habe.
+            </p>
+          </div>
+          <div class="review-card review-appstore">
+            <div class="review-header">
+              <span class="review-store-title">Lieblings-App auf meinem Handy</span>
+              <span class="review-date">Aug 20, 2024 • a.beispiel</span>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              Es ist wie das alte Apple-Motto: Es funktioniert einfach. Sie macht genau das, was sie soll, nicht mehr,
+              und das fehlerfrei. Es ist wirklich meine Lieblings-App. Perfektion.
+            </p>
+          </div>
+          <div class="review-card review-tweet">
+            <div class="review-header">
+              <div class="review-avatar">
+                <span>👩‍💼</span>
+              </div>
+              <div class="review-author">
+                <span class="author-name">Anna Weber</span>
+                <span class="author-handle">@annaweber</span>
+              </div>
+            </div>
+            <p class="review-text">
+              Endlich eine App, die hält was sie verspricht! Nutze sie jeden Tag. 💯
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
     <Footer></Footer>
   </div>
 </template>
@@ -743,6 +864,268 @@ const scrollCarousel = (direction: number) => {
 
   .showcase-card-title {
     font-size: 20px;
+  }
+}
+
+/* Reviews Section */
+.reviews-section {
+  padding: 80px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.reviews-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #1d1d1f;
+  margin-bottom: 40px;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
+  position: relative;
+  max-height: 700px;
+  overflow: hidden;
+}
+
+.reviews-grid::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 1) 100%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.reviews-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.review-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.04),
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.04),
+    0 4px 16px rgba(0, 0, 0, 0.08),
+    0 16px 32px rgba(0, 0, 0, 0.1);
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.review-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.avatar-small {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+}
+
+.review-author {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.author-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1d1d1f;
+}
+
+.author-handle {
+  font-size: 14px;
+  color: #86868b;
+}
+
+.review-date {
+  font-size: 13px;
+  color: #86868b;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.review-text {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #1d1d1f;
+  margin: 0 0 12px 0;
+}
+
+.review-text:last-child {
+  margin-bottom: 0;
+}
+
+/* App Store Review Style */
+.review-appstore .review-header {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.review-store-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #1d1d1f;
+}
+
+.review-stars {
+  color: #FF9500;
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+/* Social Video Card */
+.review-video-placeholder {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+  aspect-ratio: 9/12;
+  margin-bottom: 16px;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  z-index: 2;
+}
+
+.video-caption {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.video-preview-img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: auto;
+}
+
+.review-social-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.social-avatars {
+  display: flex;
+  margin-right: 4px;
+}
+
+.mini-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  margin-left: -6px;
+  border: 2px solid white;
+}
+
+.mini-avatar:first-child {
+  margin-left: 0;
+}
+
+.social-stat {
+  font-size: 13px;
+  color: #86868b;
+  flex: 1;
+}
+
+.view-more-btn {
+  background: #1d1d1f;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.view-more-btn:hover {
+  background: #333;
+}
+
+@media (max-width: 1000px) {
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-height: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews-section {
+    padding: 60px 20px;
+  }
+
+  .reviews-title {
+    font-size: 32px;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    max-height: none;
+  }
+
+  .reviews-grid::after {
+    display: none;
+  }
+
+  .review-card {
+    padding: 20px;
   }
 }
 </style>
