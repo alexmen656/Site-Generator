@@ -130,39 +130,11 @@
     <section class="feature-showcase">
       <h2 class="showcase-title">Lerne die App kennen.</h2>
       <div class="showcase-carousel">
-        <div class="showcase-card">
-          <span class="showcase-tag">Produktivität</span>
-          <h3 class="showcase-card-title">Alles an einem Ort.<br />Immer griffbereit.</h3>
+        <div class="showcase-card" v-for="feature in config.feature_list" :key="feature.title">
+          <span class="showcase-tag">{{ feature.title }}</span>
+          <h3 class="showcase-card-title" v-html="feature.description"></h3>
           <div class="showcase-image-container">
-            <img src="@/config/assets/iphone.png" alt="Feature 1">
-          </div>
-        </div>
-        <div class="showcase-card">
-          <span class="showcase-tag">Organisation</span>
-          <h3 class="showcase-card-title">Smart sortiert.<br />Automatisch organisiert.</h3>
-          <div class="showcase-image-container">
-            <img src="@/config/assets/iphone.png" alt="Feature 2">
-          </div>
-        </div>
-        <div class="showcase-card">
-          <span class="showcase-tag">Sicherheit</span>
-          <h3 class="showcase-card-title">Privat und sicher.<br />Von Anfang an.</h3>
-          <div class="showcase-image-container">
-            <img src="@/config/assets/iphone.png" alt="Feature 3">
-          </div>
-        </div>
-        <div class="showcase-card">
-          <span class="showcase-tag">Synchronisation</span>
-          <h3 class="showcase-card-title">Überall dabei.<br />Auf allen Geräten.</h3>
-          <div class="showcase-image-container">
-            <img src="@/config/assets/iphone.png" alt="Feature 4">
-          </div>
-        </div>
-        <div class="showcase-card">
-          <span class="showcase-tag">Suche</span>
-          <h3 class="showcase-card-title">Blitzschnell finden.<br />Nie mehr suchen.</h3>
-          <div class="showcase-image-container">
-            <img src="@/config/assets/iphone.png" alt="Feature 5">
+            <img src="@/config/assets/iphone.png" :alt="'Feature ' + feature.title">
           </div>
         </div>
       </div>
@@ -175,25 +147,22 @@
     </section>
     <section class="feature-detail-section">
       <div class="feature-detail-header">
-        <h2 class="feature-detail-title">Teile deine Daten mit<br />Freunden und Familie.</h2>
+        <h2 class="feature-detail-title" v-html="config.feature_detail.title"></h2>
         <p class="feature-detail-description">
-          Mit der Teilen-Funktion kannst du deine Informationen sofort mit deinen Liebsten teilen,
-          damit sie immer auf dem Laufenden bleiben. Füge deine Kontakte einmal hinzu und teile
-          automatisch – ganz ohne manuellen Aufwand.
+          {{ config.feature_detail.description }}
         </p>
       </div>
       <div class="feature-detail-content">
         <div class="feature-detail-text">
-          <h3 class="feature-highlight-title">Nie wieder "Kannst du mir die Infos schicken?" hören.</h3>
+          <h3 class="feature-highlight-title">{{ config.feature_highlight.title }}</h3>
           <p class="feature-highlight-description">
-            Wähle aus, mit wem du teilen möchtest. Deine Kontakte können dann selbst entscheiden,
-            welche Benachrichtigungen sie erhalten möchten (z.B. bei Updates, Änderungen und mehr).
+            {{ config.feature_highlight.description }}
           </p>
         </div>
         <div class="feature-detail-phones">
           <div class="phone-stack">
-            <img src="@/config/assets/iphone.png" alt="App Feature 1" class="phone-back">
-            <img src="@/config/assets/iphone.png" alt="App Feature 2" class="phone-front">
+            <img :src="config.feature_highlight.image1" alt="App Feature 1" class="phone-back">
+            <img :src="config.feature_highlight.image2" alt="App Feature 2" class="phone-front">
           </div>
         </div>
       </div>

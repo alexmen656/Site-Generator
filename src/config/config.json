@@ -19,5 +19,42 @@
     { "platform": "facebook", "link": "https://faceebook.com" },
     { "platform": "tiktok", "link": "https://tiktok.com" },
     { "platform": "x", "link": "https://x.com" }
+  ],
+  "feature_detail": {
+    "title": "Teile deine Daten mit<br />Freunden und Familie.",
+    "description": "Mit der Teilen-Funktion kannst du deine Informationen sofort mit deinen Liebsten teilen, damit sie immer auf dem Laufenden bleiben. Füge deine Kontakte einmal hinzu und teile automatisch – ganz ohne manuellen Aufwand."
+  },
+  "feature_highlight": {
+    "image1": "/src/config/assets/iphone.png",
+    "image2": "/src/config/assets/iphone.png",
+    "title": "Nie wieder \"Kannst du mir die Infos schicken?\" hören.",
+    "description": "Wähle aus, mit wem du teilen möchtest. Deine Kontakte können dann selbst entscheiden, welche Benachrichtigungen sie erhalten möchten (z.B. bei Updates, Änderungen und mehr)."
+  },
+  "feature_list": [
+    {
+      "icon": "/src/config/assets/iphone.png",
+      "title": "Produktivität",
+      "description": "Alles an einem Ort.<br />Immer griffbereit."
+    },
+    {
+      "icon": "/src/config/assets/iphone.png",
+      "title": "Organisation",
+      "description": "Smart sortiert.<br />Automatisch organisiert."
+    },
+    {
+      "icon": "/src/config/assets/iphone.png",
+      "title": "Sicherheit",
+      "description": "Privat und sicher.<br />Von Anfang an."
+    },
+    {
+      "icon": "/src/config/assets/iphone.png",
+      "title": "Synchronisation",
+      "description": "Überall dabei.<br />Auf allen Geräten."
+    },
+    {
+      "icon": "/src/config/assets/iphone.png",
+      "title": "Suche",
+      "description": "Blitzschnell finden.<br />Nie mehr suchen."
+    }
   ]
 }
