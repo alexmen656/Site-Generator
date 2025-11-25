@@ -12,19 +12,19 @@
       </div>
     </section>
     <section class="iphone-section">
-      <!-- Left Feature Cards -->
       <div class="feature-cards-left">
-        <div class="feature-card card-faded card-float-1">
+        <div class="feature-card card-float-1">
+          <div class="card-connector connector-left"></div>
           <div class="feature-card-icon icon-avatar">
             <span>👩</span>
           </div>
           <div class="feature-card-content">
-            <div class="feature-card-title text-faded">Mom landed in New York</div>
+            <div class="feature-card-title">Mom landed in New York</div>
             <div class="feature-card-subtitle">6:32am (22m early) and ☀️ 88°</div>
           </div>
         </div>
-
-        <div class="feature-card card-prominent card-float-2">
+        <div class="feature-card card-float-2">
+          <div class="card-connector connector-left"></div>
           <div class="feature-card-icon icon-blue">
             <span>✈️</span>
           </div>
@@ -33,18 +33,18 @@
             <div class="feature-card-subtitle">Taxiing for 13m, for take off at 5:34PM.</div>
           </div>
         </div>
-
-        <div class="feature-card card-faded card-float-3">
+        <div class="feature-card card-float-3">
+          <div class="card-connector connector-left"></div>
           <div class="feature-card-icon icon-coral">
             <span>△</span>
           </div>
           <div class="feature-card-content">
-            <div class="feature-card-title text-coral-faded">Check In is now open</div>
+            <div class="feature-card-title">Check In is now open</div>
             <div class="feature-card-subtitle">You can check-in at delta.com</div>
           </div>
         </div>
-
         <div class="feature-card card-float-4">
+          <div class="card-connector connector-left"></div>
           <div class="feature-card-icon icon-green">
             <span>✓</span>
           </div>
@@ -55,6 +55,7 @@
         </div>
 
         <div class="feature-card card-float-5">
+          <div class="card-connector connector-left"></div>
           <div class="feature-card-icon icon-yellow">
             <span>🧳 6</span>
           </div>
@@ -64,15 +65,12 @@
           </div>
         </div>
       </div>
-
-      <!-- iPhone Image -->
       <div class="iphone-container">
         <img height="650" src="@/config/assets/iphone.png" alt="iPhone showing app interface">
       </div>
-
-      <!-- Right Feature Cards -->
       <div class="feature-cards-right">
         <div class="feature-card card-float-1">
+          <div class="card-connector connector-right"></div>
           <div class="feature-card-icon icon-brown">
             <span>🚪</span>
           </div>
@@ -81,18 +79,18 @@
             <div class="feature-card-subtitle">Changed to ORD Terminal 2 • Gate 7</div>
           </div>
         </div>
-
-        <div class="feature-card card-faded card-float-2">
+        <div class="feature-card card-float-2">
+          <div class="card-connector connector-right"></div>
           <div class="feature-card-icon icon-yellow-soft">
             <span>☀️</span>
           </div>
           <div class="feature-card-content">
-            <div class="feature-card-title text-faded">AUS ✈ JFK • 70° ☀️</div>
+            <div class="feature-card-title">AUS ✈ JFK • 70° ☀️</div>
             <div class="feature-card-subtitle">Good morning! Your flight today is on time.</div>
           </div>
         </div>
-
         <div class="feature-card card-float-3">
+          <div class="card-connector connector-right"></div>
           <div class="feature-card-icon icon-orange">
             <span>➚</span>
           </div>
@@ -101,23 +99,23 @@
             <div class="feature-card-subtitle">↗ FRA 6:30pm (45m late)</div>
           </div>
         </div>
-
-        <div class="feature-card card-faded card-float-4">
+        <div class="feature-card card-float-4">
+          <div class="card-connector connector-right"></div>
           <div class="feature-card-icon icon-gray-light">
             <span>↻</span>
           </div>
           <div class="feature-card-content">
-            <div class="feature-card-title text-faded">AUS ✈ JFK • Flight changed</div>
+            <div class="feature-card-title">AUS ✈ JFK • Flight changed</div>
             <div class="feature-card-subtitle">New Departure: 8:28pm (was 11:30pm)</div>
           </div>
         </div>
-
-        <div class="feature-card card-faded card-float-5">
+        <div class="feature-card card-float-5">
+          <div class="card-connector connector-right"></div>
           <div class="feature-card-icon icon-yellow-soft">
             <span>🧳</span>
           </div>
           <div class="feature-card-content">
-            <div class="feature-card-title text-faded"><strong>Baggage Claim</strong></div>
+            <div class="feature-card-title"><strong>Baggage Claim</strong></div>
             <div class="feature-card-subtitle">Assigned to Belt 6</div>
           </div>
         </div>
@@ -163,99 +161,139 @@ const downloadOnGooglePlay = () => {
   max-width: 1400px;
   margin: 0 auto;
   min-height: 700px;
+  overflow: visible;
 }
 
 .feature-cards-left,
 .feature-cards-right {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
   position: absolute;
-  z-index: 0;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .feature-cards-left {
-  left: 0;
+  right: calc(50% + 250px);
   align-items: flex-end;
 }
 
 .feature-cards-right {
-  right: 0;
+  left: calc(50% + 250px);
   align-items: flex-start;
 }
 
-/* Floating positions - staggered like in the original */
-.card-float-1 {
-  transform: translateX(30px);
+.feature-cards-left .card-float-1 {
+  transform: translateX(90px);
+  opacity: 0.4;
 }
 
-.card-float-2 {
-  transform: translateX(60px);
-}
-
-.card-float-3 {
+.feature-cards-left .card-float-2 {
   transform: translateX(40px);
+  opacity: 1;
 }
 
-.card-float-4 {
+.feature-cards-left .card-float-3 {
+  transform: translateX(70px);
+  opacity: 0.5;
+}
+
+.feature-cards-left .card-float-4 {
   transform: translateX(20px);
+  opacity: 0.9;
 }
 
-.card-float-5 {
-  transform: translateX(50px);
+.feature-cards-left .card-float-5 {
+  transform: translateX(60px);
+  opacity: 0.6;
 }
 
 .feature-cards-right .card-float-1 {
   transform: translateX(-30px);
+  opacity: 0.95;
 }
 
 .feature-cards-right .card-float-2 {
-  transform: translateX(-50px);
+  transform: translateX(-80px);
+  opacity: 0.45;
 }
 
 .feature-cards-right .card-float-3 {
-  transform: translateX(-40px);
+  transform: translateX(-50px);
+  opacity: 1;
 }
 
 .feature-cards-right .card-float-4 {
-  transform: translateX(-60px);
+  transform: translateX(-100px);
+  opacity: 0.35;
 }
 
 .feature-cards-right .card-float-5 {
-  transform: translateX(-45px);
+  transform: translateX(-70px);
+  opacity: 0.5;
 }
 
 .feature-card {
   display: flex;
   align-items: center;
   gap: 12px;
-  background: #fff;
+  background: rgb(255, 255, 255);
   border-radius: 16px;
   padding: 14px 18px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06), 0 4px 24px rgba(0, 0, 0, 0.04);
+  box-shadow:
+    rgba(0, 0, 0, 0.04) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0.02) 0px 1px 1px 0.5px,
+    rgba(0, 0, 0, 0.02) 0px 3px 3px 1.5px,
+    rgba(0, 0, 0, 0.02) 0px 6px 6px -3px,
+    rgba(0, 0, 0, 0.02) 0px 12px 12px -6px,
+    rgba(0, 0, 0, 0.02) 0px 24px 24px -12px;
   max-width: 300px;
   transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  position: relative;
+}
+
+.card-connector {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 420px;
+  background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.6) 60%, rgba(255, 255, 255, 0) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.connector-left {
+  left: 100%;
+  border-radius: 0 16px 16px 0;
+}
+
+.connector-right {
+  right: 100%;
+  background: linear-gradient(to left, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.6) 60%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 16px 0 0 16px;
 }
 
 .feature-card:hover {
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), 0 8px 32px rgba(0, 0, 0, 0.06);
+  box-shadow:
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0.04) 0px 2px 2px 1px,
+    rgba(0, 0, 0, 0.04) 0px 4px 4px 2px,
+    rgba(0, 0, 0, 0.04) 0px 8px 8px -4px,
+    rgba(0, 0, 0, 0.04) 0px 16px 16px -8px,
+    rgba(0, 0, 0, 0.04) 0px 32px 32px -16px;
   z-index: 10;
-}
-
-/* Faded cards - reduced opacity like in original */
-.card-faded {
-  opacity: 0.5;
+  opacity: 1 !important;
 }
 
 .card-faded:hover {
-  opacity: 0.8;
+  opacity: 1 !important;
 }
 
-/* Prominent card - full opacity with subtle highlight */
-.card-prominent {
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), 0 8px 32px rgba(0, 0, 0, 0.04);
-  opacity: 1;
+.card-prominent:hover {
+  opacity: 1 !important;
 }
 
 .feature-card-icon {
@@ -270,7 +308,6 @@ const downloadOnGooglePlay = () => {
   background: #f5f5f5;
 }
 
-/* Icon colors */
 .icon-blue {
   background: linear-gradient(135deg, #4A90D9, #357ABD);
   color: white;
@@ -316,7 +353,6 @@ const downloadOnGooglePlay = () => {
   border-radius: 50%;
 }
 
-/* Text styles */
 .feature-card-content {
   display: flex;
   flex-direction: column;
@@ -348,7 +384,6 @@ const downloadOnGooglePlay = () => {
   color: #FF8A80;
 }
 
-/* iPhone container - highest z-index */
 .iphone-container {
   flex-shrink: 0;
   z-index: 5;
@@ -439,11 +474,11 @@ const downloadOnGooglePlay = () => {
 
 @media (max-width: 1200px) {
   .feature-cards-left {
-    left: -20px;
+    right: calc(50% + 140px);
   }
 
   .feature-cards-right {
-    right: -20px;
+    left: calc(50% + 140px);
   }
 
   .card-float-1,
