@@ -1,5 +1,5 @@
 {
-  "appName": "Pocket",
+  "appName": "Pocketz",
   "appIcon": "256.png",
   "ctaButtonText": "Download",
   "headline": "Your digital wallet,<br /> supercharged and secure",
@@ -28,6 +28,7 @@
     "title": "Nie wieder \"Kannst du mir die Infos schicken?\" hören.",
     "description": "Wähle aus, mit wem du teilen möchtest. Deine Kontakte können dann selbst entscheiden, welche Benachrichtigungen sie erhalten möchten (z.B. bei Updates, Änderungen und mehr)."
   },
+  "showcase_title": "Learn the App know.",
   "feature_list": [
     {
       "icon": "/src/config/assets/iphone.png",

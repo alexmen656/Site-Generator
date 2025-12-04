@@ -19,8 +19,8 @@
             <span>👩</span>
           </div>
           <div class="feature-card-content">
-            <div class="feature-card-title">Mom landed in New York</div>
-            <div class="feature-card-subtitle">6:32am (22m early) and ☀️ 88°</div>
+            <div class="feature-card-title">Card saved: BILLA</div>
+            <div class="feature-card-subtitle">Barcode saved — ready to scan</div>
           </div>
         </div>
         <div class="feature-card card-float-2">
@@ -29,8 +29,8 @@
             <span>✈️</span>
           </div>
           <div class="feature-card-content">
-            <div class="feature-card-title"><strong>AUS ✈ JFK • Departed Gate</strong></div>
-            <div class="feature-card-subtitle">Taxiing for 13m, for take off at 5:34PM.</div>
+            <div class="feature-card-title"><strong>Barcode erkannt: Starbucks</strong></div>
+            <div class="feature-card-subtitle">Schnelles Hinzufügen per Scan</div>
           </div>
         </div>
         <div class="feature-card card-float-3">
@@ -39,8 +39,8 @@
             <span>△</span>
           </div>
           <div class="feature-card-content">
-            <div class="feature-card-title">Check In is now open</div>
-            <div class="feature-card-subtitle">You can check-in at delta.com</div>
+            <div class="feature-card-title">Points updated</div>
+            <div class="feature-card-subtitle">Deine Punkte wurden automatisch synchronisiert</div>
           </div>
         </div>
         <div class="feature-card card-float-4">
@@ -49,8 +49,8 @@
             <span>✓</span>
           </div>
           <div class="feature-card-content">
-            <div class="feature-card-title"><strong>AUS ✈ JFK • Landed</strong></div>
-            <div class="feature-card-subtitle">It's 6:32am (22m early) and ☀️ 88°</div>
+            <div class="feature-card-title"><strong>Reward redeemed</strong></div>
+            <div class="feature-card-subtitle">Reward redeemed — tracked</div>
           </div>
         </div>
 
@@ -60,8 +60,8 @@
             <span>🧳 6</span>
           </div>
           <div class="feature-card-content">
-            <div class="feature-card-title"><strong>Baggage Claim</strong></div>
-            <div class="feature-card-subtitle">Assigned to Belt 6</div>
+            <div class="feature-card-title"><strong>Multiple cards</strong></div>
+            <div class="feature-card-subtitle">Organize cards by category</div>
           </div>
         </div>
       </div>
@@ -75,8 +75,8 @@
             <span>🚪</span>
           </div>
           <div class="feature-card-content">
-            <div class="feature-card-title"><strong>Gate changed</strong></div>
-            <div class="feature-card-subtitle">Changed to ORD Terminal 2 • Gate 7</div>
+            <div class="feature-card-title"><strong>Card shared</strong></div>
+            <div class="feature-card-subtitle">Secure sharing via QR or link</div>
           </div>
         </div>
         <div class="feature-card card-float-2">
@@ -85,8 +85,8 @@
             <span>☀️</span>
           </div>
           <div class="feature-card-content">
-            <div class="feature-card-title">AUS ✈ JFK • 70° ☀️</div>
-            <div class="feature-card-subtitle">Good morning! Your flight today is on time.</div>
+            <div class="feature-card-title">Bright screen mode</div>
+            <div class="feature-card-subtitle">Maximize display brightness for scanning</div>
           </div>
         </div>
         <div class="feature-card card-float-3">
@@ -95,8 +95,8 @@
             <span>➚</span>
           </div>
           <div class="feature-card-content">
-            <div class="feature-card-title text-coral"><strong>AUS ✈ JFK • Delayed 45m</strong></div>
-            <div class="feature-card-subtitle">↗ FRA 6:30pm (45m late)</div>
+            <div class="feature-card-title text-coral"><strong>Widgets & quick access</strong></div>
+            <div class="feature-card-subtitle">Quick access to your favorite cards</div>
           </div>
         </div>
         <div class="feature-card card-float-4">
@@ -105,8 +105,8 @@
             <span>↻</span>
           </div>
           <div class="feature-card-content">
-            <div class="feature-card-title">AUS ✈ JFK • Flight changed</div>
-            <div class="feature-card-subtitle">New Departure: 8:28pm (was 11:30pm)</div>
+            <div class="feature-card-title">iCloud Sync</div>
+            <div class="feature-card-subtitle">Sync across your devices</div>
           </div>
         </div>
         <div class="feature-card card-float-5">
@@ -115,8 +115,8 @@
             <span>🧳</span>
           </div>
           <div class="feature-card-content">
-            <div class="feature-card-title"><strong>Baggage Claim</strong></div>
-            <div class="feature-card-subtitle">Assigned to Belt 6</div>
+            <div class="feature-card-title"><strong>Available offline</strong></div>
+            <div class="feature-card-subtitle">Access without internet — stored locally</div>
           </div>
         </div>
       </div>
@@ -128,7 +128,7 @@
           src="@/config/assets/google_play.svg" alt="Google Play Store Badge"></button>
     </section>
     <section class="feature-showcase">
-      <h2 class="showcase-title">Lerne die App kennen.</h2>
+      <h2 class="showcase-title">{{ config.showcase_title }}</h2>
       <div class="showcase-carousel">
         <div class="showcase-card" v-for="feature in config.feature_list" :key="feature.title">
           <span class="showcase-tag">{{ feature.title }}</span>
