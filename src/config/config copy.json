@@ -7,7 +7,8 @@
   "links": [
     { "name": "Support", "href": "/support" },
     { "name": "Blog", "href": "/blog" },
-    { "name": "Updates", "href": "/updates" }
+    { "name": "Updates", "href": "/updates" },
+    { "name": "Pricing", "href": "#" }
   ],
   "copyrightCompany": "Alex Polan",
   "appStoreLink": "https://apple.com",
