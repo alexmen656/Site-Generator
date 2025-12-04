@@ -91,5 +91,25 @@
       "excerpt": "Verbinde unsere App mit iOS Shortcuts für maximale Effizienz.",
       "readMoreLink": "#"
     }
-  ]
+  ],
+  "supportCards": [
+    {
+      "title": "Explore Paste",
+      "icon": "<svg width=\"48\" height=\"48\" viewBox=\"0 0 48 48\" fill=\"none\"><rect x=\"8\" y=\"12\" width=\"32\" height=\"22\" rx=\"2\" stroke=\"currentColor\" stroke-width=\"2\" /><path d=\"M8 18h32M16 34h16\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" /></svg>"
+    },
+    {
+      "title": "Paste on Mac",
+      "icon": "<svg width=\"48\" height=\"48\" viewBox=\"0 0 48 48\" fill=\"none\"><rect x=\"8\" y=\"12\" width=\"32\" height=\"22\" rx=\"2\" stroke=\"currentColor\" stroke-width=\"2\" /><path d=\"M8 18h32M16 34h16\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" /></svg>"
+    },
+    {
+      "title": "Paste on iPhone",
+      "icon": "<svg width=\"48\" height=\"48\" viewBox=\"0 0 48 48\" fill=\"none\"><rect x=\"16\" y=\"8\" width=\"16\" height=\"32\" rx=\"2\" stroke=\"currentColor\" stroke-width=\"2\" /><circle cx=\"24\" cy=\"36\" r=\"1.5\" fill=\"currentColor\" /></svg>"
+    },
+    {
+      "title": "Paste on iPad",
+      "icon": "<svg width=\"48\" height=\"48\" viewBox=\"0 0 48 48\" fill=\"none\"><rect x=\"12\" y=\"10\" width=\"24\" height=\"28\" rx=\"2\" stroke=\"currentColor\" stroke-width=\"2\" /><circle cx=\"24\" cy=\"34\" r=\"1.5\" fill=\"currentColor\" /></svg>"
+    }
+  ],
+  "supportTitle": "How can we help?",
+  "supportSearchPlaceholder": "Search for a topic or question"
 }

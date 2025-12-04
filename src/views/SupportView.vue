@@ -3,14 +3,14 @@
         <Header></Header>
         <section class="hero-section">
             <div class="hero-content">
-                <h1 class="hero-title">How can we help?</h1>
+                <h1 class="hero-title">{{ config.supportTitle }}</h1>
                 <div class="search-container">
                     <div class="search-box">
                         <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM18 18l-4-4" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                        <input type="text" placeholder="Search for a topic or question" class="search-input" />
+                        <input type="text" :placeholder="config.supportSearchPlaceholder" class="search-input" />
                     </div>
                 </div>
             </div>
@@ -33,9 +33,13 @@
 <script setup lang="ts">
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
+import { inject } from 'vue';
 
+const config: any = inject('config');
 const sectionTitle = 'Getting started';
-const cards = [
+const cards = config.supportCards;
+
+/*[
     {
         title: 'Explore Paste', icon: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none">
                                 <rect x="8" y="12" width="32" height="22" rx="2" stroke="currentColor"
@@ -62,7 +66,7 @@ const cards = [
                                     stroke- width="2" />
     <circle cx="24" cy = "34" r = "1.5" fill = "currentColor" />
     </svg>` }
-];
+];*/
 </script>
 
 <style scoped>
