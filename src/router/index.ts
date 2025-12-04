@@ -55,6 +55,9 @@ const router = createRouter({
       component: HomeView,
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    return { top: 0 }
+  },
 })
 
 export default router
