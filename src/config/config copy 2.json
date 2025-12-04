@@ -1,9 +1,9 @@
 {
   "appName": "Pocket",
   "appIcon": "256.png",
-  "ctaButtonText": "Download",
-  "headline": "Your digital wallet,<br /> supercharged and secure",
-  "description": "Pocketz keeps all your loyalty cards organized and ready to scan. Lightweight,<br />intuitive, works offline, and private by design.",
+  "ctaButtonText": "Try for free",
+  "headline": "Your clipboard,<br /> supercharged and secure",
+  "description": "Paste keeps everything you copy organized and searchable. Lightweight,<br />intuitive, packed with smart features, and private by design.",
   "links": [
     { "name": "Support", "href": "/support" },
     { "name": "Blog", "href": "/blog" },
