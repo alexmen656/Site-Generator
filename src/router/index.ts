@@ -30,6 +30,11 @@ const router = createRouter({
       component: () => import('../views/SupportView.vue'),
     },
     {
+      path: '/support/:category',
+      name: 'support-detail',
+      component: () => import('../views/SupportDetailView.vue'),
+    },
+    {
       path: '/updates',
       name: 'updates',
       component: () => import('../views/UpdatesView.vue'),
