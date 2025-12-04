@@ -111,5 +111,6 @@
     }
   ],
   "supportTitle": "How can we help?",
-  "supportSearchPlaceholder": "Search for a topic or question"
+  "supportSearchPlaceholder": "Search for a topic or question",
+  "supportSectionTitle": "Getting started"
 }
