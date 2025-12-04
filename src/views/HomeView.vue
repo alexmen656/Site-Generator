@@ -121,11 +121,11 @@
         </div>
       </div>
     </section>
-    <section>
-      <button @click="downloadOnAppStore()">Download on App Store</button>
-      <button @click="downloadOnGooglePlay()">Download on Google Play</button>
-      <img height="100" src="@/config/assets/app_store.svg" alt="Apple App Store Badge">
-      <img height="100" src="@/config/assets/google_play.svg" alt="Google Play Store Badge">
+    <section class="dowload-section">
+      <button class="download-btn" @click="downloadOnAppStore()"><img height="100" src="@/config/assets/app_store.svg"
+          alt="Apple App Store Badge"></button>
+      <button class="download-btn" @click="downloadOnGooglePlay()"><img height="100"
+          src="@/config/assets/google_play.svg" alt="Google Play Store Badge"></button>
     </section>
     <section class="feature-showcase">
       <h2 class="showcase-title">Lerne die App kennen.</h2>
@@ -316,6 +316,19 @@ const scrollCarousel = (direction: number) => {
 </script>
 
 <style scoped>
+.download-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 10px;
+  padding: 0;
+}
+
+.dowload-section {
+  text-align: center;
+  margin: 40px 0;
+}
+
 .iphone-section {
   display: flex;
   justify-content: center;
