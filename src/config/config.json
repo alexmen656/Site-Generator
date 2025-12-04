@@ -2,6 +2,8 @@
   "appName": "Pocketz",
   "appIcon": "256.png",
   "ctaButtonText": "Download",
+  "iosLink": "https://apple.com",
+  "androidLink": "https://google.com",
   "headline": "Your digital wallet,<br /> supercharged and secure",
   "description": "Pocketz keeps all your loyalty cards organized and ready to scan. Lightweight,<br />intuitive, works offline, and private by design.",
   "links": [

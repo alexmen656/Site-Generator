@@ -8,7 +8,8 @@
       <div class="hero-content">
         <h1 class="hero-title" v-html="config.headline"></h1>
         <p class="hero-description" v-html="config.description"></p>
-        <button class="cta-button-large">{{ config.ctaButtonText }}</button>
+        <button @click="goToDownload()" class="cta-button-large">{{
+          config.ctaButtonText }}</button>
       </div>
     </section>
     <section class="iphone-section">
@@ -299,11 +300,11 @@ import { inject } from 'vue'
 const config: any = inject('config')
 
 const downloadOnAppStore = () => {
-  location.href = config.appStoreLink
+  location.href = config.iosLink
 }
 
 const downloadOnGooglePlay = () => {
-  location.href = config.googlePlayLink
+  location.href = config.androidLink
 }
 
 const scrollCarousel = (direction: number) => {
@@ -312,6 +313,22 @@ const scrollCarousel = (direction: number) => {
     const scrollAmount = 340 * direction
     carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' })
   }
+}
+
+function getOS() {
+  const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+  if (/android/i.test(ua)) return "android";
+  if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) return "ios";
+
+  return "unknown";
+}
+
+const os = getOS();
+console.log("Detected OS:", os);
+
+function goToDownload() {
+  location.href = (os == 'android' ? config.androidLink : config.iosLink)
 }
 </script>
 

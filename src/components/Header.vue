@@ -12,7 +12,8 @@
                 <a :href="link.href" class="nav-link" v-for="link in config.links" :key="link.name">{{ link.name }}</a>
             </div>
             <div class="nav-right">
-                <button class="cta-button">{{ config.ctaButtonText }}</button>
+                <a :href="os == 'android' ? config.androidLink : config.iosLink"><button class="cta-button">{{
+                    config.ctaButtonText }}</button></a>
             </div>
         </div>
     </nav>
@@ -24,6 +25,18 @@ import { inject } from 'vue'
 
 const config: any = inject('config')
 const router = useRouter();
+
+function getOS() {
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+    if (/android/i.test(ua)) return "android";
+    if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) return "ios";
+
+    return "unknown";
+}
+
+const os = getOS();
+console.log("Detected OS:", os);
 </script>
 
 <style scoped>
@@ -126,6 +139,15 @@ const router = useRouter();
     font-weight: 500;
     cursor: pointer;
     transition: background 0.2s;
+}
+
+.cta-button a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.2s;
+
 }
 
 .cta-button:hover {
