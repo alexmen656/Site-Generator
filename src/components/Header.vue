@@ -3,7 +3,7 @@
         <div class="nav-container">
             <div class="nav-left">
                 <div @click="router.push('/')" class="logo">
-                    <span class="logo-icon"><img :src="'/src/config/assets/' + config.appIcon"
+                    <span class="logo-icon"><img :src="'/assets/' + config.appIcon"
                             :alt="'Logo of ' + config.appName"></span>
                     <span class="logo-text">{{ config.appName }}</span>
                 </div>
