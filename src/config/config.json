@@ -25,8 +25,8 @@
     "description": "Mit der Teilen-Funktion kannst du deine Informationen sofort mit deinen Liebsten teilen, damit sie immer auf dem Laufenden bleiben. Füge deine Kontakte einmal hinzu und teile automatisch – ganz ohne manuellen Aufwand."
   },
   "feature_highlight": {
-    "image1": "/src/config/assets/iphone.png",
-    "image2": "/src/config/assets/iphone.png",
+    "image1": "/assets/iphone.png",
+    "image2": "/assets/iphone.png",
     "title": "Nie wieder \"Kannst du mir die Infos schicken?\" hören.",
     "description": "Wähle aus, mit wem du teilen möchtest. Deine Kontakte können dann selbst entscheiden, welche Benachrichtigungen sie erhalten möchten (z.B. bei Updates, Änderungen und mehr)."
   },

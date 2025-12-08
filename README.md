@@ -1,9 +1,12 @@
 # Site Generator
 
-## Crdits
+This is a website builder wehere you can configure all texts and images in config.json, atm it's more a website for Pocketz (pocketz.app), but I plan to add a CMS later to make it easibly editable and reusabele.
+
+## Credits
 
 Parts of the site are inspired by following sites:
-https://pasteapp.io/
+https://pasteapp.io
+https://flighty.com
 
 This template should help get you started developing with Vue 3 in Vite.
 
