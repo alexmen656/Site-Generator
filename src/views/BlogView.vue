@@ -234,7 +234,7 @@ const config: any = inject('config')
 .blog-hero {
     padding: 120px 40px 60px;
     text-align: center;
-    background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
+    /*background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);*/
 }
 
 .blog-hero-content {

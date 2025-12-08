@@ -592,6 +592,128 @@
   ],
   "privacyPolicyEffectiveDate": "17. December 2024",
   "termsOfUseEffectiveDate": "17. December 2024",
+  "updatesView": {
+    "hero": {
+      "title": "Was gibt's Neues?",
+      "description": "Alle Updates, neue Features und Verbesserungen auf einen Blick."
+    },
+    "releases": [
+      {
+        "isLatest": true,
+        "badge": "Neu",
+        "version": "Version 2.5",
+        "date": "November 2024",
+        "title": "Das bisher größte Update",
+        "description": "Wir haben komplett neu gedacht, wie du deine Daten organisierst. Mit dem neuen Dashboard behältst du alles im Blick – schneller, übersichtlicher und noch intuitiver.",
+        "features": [
+          {
+            "icon": "✨",
+            "title": "Neues Dashboard",
+            "description": "Alle wichtigen Infos auf einen Blick mit personalisierbaren Widgets."
+          },
+          {
+            "icon": "🚀",
+            "title": "Performance-Boost",
+            "description": "Bis zu 3x schnellere Ladezeiten durch optimierte Architektur."
+          },
+          {
+            "icon": "🎨",
+            "title": "Dark Mode",
+            "description": "Schone deine Augen mit dem neuen dunklen Design."
+          }
+        ],
+        "imageUrl": "/assets/iphone.png"
+      },
+      {
+        "isLatest": false,
+        "version": "Version 2.4",
+        "date": "Oktober 2024",
+        "title": "Teilen leicht gemacht",
+        "description": "Mit der neuen Teilen-Funktion kannst du deine Daten blitzschnell mit Freunden und Familie teilen. Keine komplizierten Einstellungen mehr.",
+        "changelog": [
+          "Neue Share-Funktion mit Kontakt-Synchronisation",
+          "Verbesserte Push-Benachrichtigungen",
+          "Bugfixes für iOS 18 Kompatibilität",
+          "Kleinere UI-Verbesserungen"
+        ]
+      },
+      {
+        "isLatest": false,
+        "version": "Version 2.3",
+        "date": "September 2024",
+        "title": "Widgets für deinen Homescreen",
+        "description": "Endlich sind sie da: Native Widgets für iOS und Android. Behalte deine wichtigsten Daten direkt auf dem Homescreen im Blick.",
+        "changelog": [
+          "3 neue Widget-Größen (klein, mittel, groß)",
+          "Anpassbare Widget-Inhalte",
+          "Live Activities Support für iPhone 14 Pro+",
+          "Neue Tastenkürzel für Power-User"
+        ]
+      },
+      {
+        "isLatest": false,
+        "version": "Version 2.2",
+        "date": "August 2024",
+        "title": "Smarte Suche",
+        "description": "Die neue intelligente Suche findet alles in Sekundenschnelle – egal ob Text, Bilder oder Dokumente.",
+        "changelog": [
+          "KI-gestützte Suchvorschläge",
+          "Filter nach Datum, Typ und Tags",
+          "Spotlight-Integration für iOS",
+          "Verbesserte Offline-Suche"
+        ]
+      },
+      {
+        "isLatest": false,
+        "version": "Version 2.1",
+        "date": "Juli 2024",
+        "title": "Cloud Sync",
+        "description": "Deine Daten, überall verfügbar. Mit dem neuen Cloud Sync synchronisierst du automatisch zwischen all deinen Geräten.",
+        "changelog": [
+          "iCloud & Google Drive Integration",
+          "Ende-zu-Ende-Verschlüsselung",
+          "Automatische Backups",
+          "Konfliktlösung bei gleichzeitiger Bearbeitung"
+        ]
+      },
+      {
+        "isLatest": false,
+        "version": "Version 2.0",
+        "date": "Juni 2024",
+        "title": "Der große Relaunch",
+        "description": "Komplett überarbeitetes Design, neue Features und eine noch bessere Performance. Willkommen in der Zukunft.",
+        "changelog": [
+          "Komplett neues UI Design",
+          "Neue App-Architektur für bessere Performance",
+          "iPad-optimierte Oberfläche",
+          "Über 50 Bugfixes und Verbesserungen"
+        ]
+      }
+    ],
+    "sidebar": {
+      "newsletter": {
+        "title": "Newsletter",
+        "description": "Erhalte Updates direkt in deine Inbox.",
+        "placeholder": "deine@email.com"
+      },
+      "quickAccess": {
+        "title": "Quick Access",
+        "links": [
+          { "version": "v2.5 – November 2024" },
+          { "version": "v2.4 – October 2024" },
+          { "version": "v2.3 – September 2024" },
+          { "version": "v2.2 – August 2024" },
+          { "version": "v2.1 – July 2024" },
+          { "version": "v2.0 – June 2024" }
+        ]
+      },
+      "cta": {
+        "title": "Not on board yet?",
+        "description": "Download the app now and experience all the features yourself.",
+        "buttonText": "Download App"
+      }
+    }
+  },
   "footer": {
     "section1": {
       "title": "Product",

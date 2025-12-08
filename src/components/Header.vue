@@ -1,5 +1,6 @@
 <template>
-    <nav :class="['navbar', { 'support-theme': isSupportAtTop, 'no-border': isTransparentAtTop }]">
+    <nav
+        :class="['navbar', { 'support-theme': isSupportAtTop, 'blog-updates-theme': isBlogOrUpdatesAtTop, 'no-border': isTransparentAtTop }]">
         <div class="nav-container">
             <div class="nav-left">
                 <div @click="router.push('/')" class="logo">
@@ -66,8 +67,12 @@ const isSupportAtTop = computed(() => {
     return isAtTop.value && (route.name === 'support' || route.name === 'support-detail' || route.name === 'privacy-policy' || route.name === 'terms-of-use');
 });
 
+const isBlogOrUpdatesAtTop = computed(() => {
+    return isAtTop.value && (route.name === 'blog' || route.name === 'updates');
+});
+
 const isTransparentAtTop = computed(() => {
-    return isAtTop.value && (route.name === 'home' || route.name === 'support' || route.name === 'terms-of-use' || route.name === 'privacy-policy');
+    return isAtTop.value && (route.name === 'home' || route.name === 'support' || route.name === 'terms-of-use' || route.name === 'privacy-policy' || route.name === 'blog' || route.name === 'updates');
 });
 
 function getOS() {
@@ -109,6 +114,11 @@ const closeMobileMenu = () => {
 
 .navbar.support-theme {
     background: #F5F5F7;
+    backdrop-filter: none;
+}
+
+.navbar.blog-updates-theme {
+    background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
     backdrop-filter: none;
 }
 

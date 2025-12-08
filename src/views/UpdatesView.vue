@@ -3,174 +3,66 @@
         <Header></Header>
         <section class="updates-hero">
             <div class="updates-hero-content">
-                <h1 class="updates-hero-title">Was gibt's Neues?</h1>
+                <h1 class="updates-hero-title">{{ updatesData.hero.title }}</h1>
                 <p class="updates-hero-description">
-                    Alle Updates, neue Features und Verbesserungen auf einen Blick.
+                    {{ updatesData.hero.description }}
                 </p>
             </div>
         </section>
         <section class="updates-content">
             <div class="updates-timeline">
-                <article class="release-card release-latest">
-                    <div class="release-badge">Neu</div>
+                <article v-for="(release, index) in updatesData.releases" :key="index"
+                    :class="['release-card', { 'release-latest': release.isLatest }]">
+                    <div v-if="release.badge" class="release-badge">{{ release.badge }}</div>
                     <div class="release-header">
                         <div class="release-version">
-                            <span class="version-number">Version 2.5</span>
-                            <span class="version-date">November 2024</span>
+                            <span class="version-number">{{ release.version }}</span>
+                            <span class="version-date">{{ release.date }}</span>
                         </div>
-                        <h2 class="release-title">Das bisher größte Update</h2>
+                        <h2 class="release-title">{{ release.title }}</h2>
                     </div>
                     <p class="release-description">
-                        Wir haben komplett neu gedacht, wie du deine Daten organisierst. Mit dem neuen
-                        Dashboard behältst du alles im Blick – schneller, übersichtlicher und noch intuitiver.
+                        {{ release.description }}
                     </p>
-                    <div class="release-features">
-                        <div class="release-feature">
-                            <div class="feature-icon">✨</div>
+                    <div v-if="release.features" class="release-features">
+                        <div v-for="(feature, featureIndex) in release.features" :key="featureIndex"
+                            class="release-feature">
+                            <div class="feature-icon">{{ feature.icon }}</div>
                             <div class="feature-content">
-                                <h4>Neues Dashboard</h4>
-                                <p>Alle wichtigen Infos auf einen Blick mit personalisierbaren Widgets.</p>
-                            </div>
-                        </div>
-                        <div class="release-feature">
-                            <div class="feature-icon">🚀</div>
-                            <div class="feature-content">
-                                <h4>Performance-Boost</h4>
-                                <p>Bis zu 3x schnellere Ladezeiten durch optimierte Architektur.</p>
-                            </div>
-                        </div>
-                        <div class="release-feature">
-                            <div class="feature-icon">🎨</div>
-                            <div class="feature-content">
-                                <h4>Dark Mode</h4>
-                                <p>Schone deine Augen mit dem neuen dunklen Design.</p>
+                                <h4>{{ feature.title }}</h4>
+                                <p>{{ feature.description }}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="release-image-showcase">
-                        <img src="/assets/iphone.png" alt="Version 2.5 Preview" class="release-phone">
+                    <div v-if="release.imageUrl" class="release-image-showcase">
+                        <img :src="release.imageUrl" :alt="`${release.version} Preview`" class="release-phone">
                     </div>
-                </article>
-                <article class="release-card">
-                    <div class="release-header">
-                        <div class="release-version">
-                            <span class="version-number">Version 2.4</span>
-                            <span class="version-date">Oktober 2024</span>
-                        </div>
-                        <h2 class="release-title">Teilen leicht gemacht</h2>
-                    </div>
-                    <p class="release-description">
-                        Mit der neuen Teilen-Funktion kannst du deine Daten blitzschnell mit Freunden
-                        und Familie teilen. Keine komplizierten Einstellungen mehr.
-                    </p>
-                    <ul class="release-changelog">
-                        <li>Neue Share-Funktion mit Kontakt-Synchronisation</li>
-                        <li>Verbesserte Push-Benachrichtigungen</li>
-                        <li>Bugfixes für iOS 18 Kompatibilität</li>
-                        <li>Kleinere UI-Verbesserungen</li>
-                    </ul>
-                </article>
-                <article class="release-card">
-                    <div class="release-header">
-                        <div class="release-version">
-                            <span class="version-number">Version 2.3</span>
-                            <span class="version-date">September 2024</span>
-                        </div>
-                        <h2 class="release-title">Widgets für deinen Homescreen</h2>
-                    </div>
-                    <p class="release-description">
-                        Endlich sind sie da: Native Widgets für iOS und Android. Behalte deine
-                        wichtigsten Daten direkt auf dem Homescreen im Blick.
-                    </p>
-                    <ul class="release-changelog">
-                        <li>3 neue Widget-Größen (klein, mittel, groß)</li>
-                        <li>Anpassbare Widget-Inhalte</li>
-                        <li>Live Activities Support für iPhone 14 Pro+</li>
-                        <li>Neue Tastenkürzel für Power-User</li>
-                    </ul>
-                </article>
-                <article class="release-card">
-                    <div class="release-header">
-                        <div class="release-version">
-                            <span class="version-number">Version 2.2</span>
-                            <span class="version-date">August 2024</span>
-                        </div>
-                        <h2 class="release-title">Smarte Suche</h2>
-                    </div>
-                    <p class="release-description">
-                        Die neue intelligente Suche findet alles in Sekundenschnelle –
-                        egal ob Text, Bilder oder Dokumente.
-                    </p>
-                    <ul class="release-changelog">
-                        <li>KI-gestützte Suchvorschläge</li>
-                        <li>Filter nach Datum, Typ und Tags</li>
-                        <li>Spotlight-Integration für iOS</li>
-                        <li>Verbesserte Offline-Suche</li>
-                    </ul>
-                </article>
-                <article class="release-card">
-                    <div class="release-header">
-                        <div class="release-version">
-                            <span class="version-number">Version 2.1</span>
-                            <span class="version-date">Juli 2024</span>
-                        </div>
-                        <h2 class="release-title">Cloud Sync</h2>
-                    </div>
-                    <p class="release-description">
-                        Deine Daten, überall verfügbar. Mit dem neuen Cloud Sync synchronisierst
-                        du automatisch zwischen all deinen Geräten.
-                    </p>
-                    <ul class="release-changelog">
-                        <li>iCloud & Google Drive Integration</li>
-                        <li>Ende-zu-Ende-Verschlüsselung</li>
-                        <li>Automatische Backups</li>
-                        <li>Konfliktlösung bei gleichzeitiger Bearbeitung</li>
-                    </ul>
-                </article>
-                <article class="release-card">
-                    <div class="release-header">
-                        <div class="release-version">
-                            <span class="version-number">Version 2.0</span>
-                            <span class="version-date">Juni 2024</span>
-                        </div>
-                        <h2 class="release-title">Der große Relaunch</h2>
-                    </div>
-                    <p class="release-description">
-                        Komplett überarbeitetes Design, neue Features und eine noch bessere
-                        Performance. Willkommen in der Zukunft.
-                    </p>
-                    <ul class="release-changelog">
-                        <li>Komplett neues UI Design</li>
-                        <li>Neue App-Architektur für bessere Performance</li>
-                        <li>iPad-optimierte Oberfläche</li>
-                        <li>Über 50 Bugfixes und Verbesserungen</li>
+                    <ul v-if="release.changelog" class="release-changelog">
+                        <li v-for="(item, itemIndex) in release.changelog" :key="itemIndex">{{ item }}</li>
                     </ul>
                 </article>
             </div>
             <aside class="updates-sidebar">
                 <div class="sidebar-card">
-                    <h3>Newsletter</h3>
-                    <p>Erhalte Updates direkt in deine Inbox.</p>
+                    <h3>{{ updatesData.sidebar.newsletter.title }}</h3>
+                    <p>{{ updatesData.sidebar.newsletter.description }}</p>
                     <div class="newsletter-form">
-                        <input type="email" placeholder="deine@email.com" class="newsletter-input">
-                        <button class="newsletter-btn">Abonnieren</button>
+                        <input type="email" :placeholder="updatesData.sidebar.newsletter.placeholder"
+                            class="newsletter-input">
+                        <button class="newsletter-btn">Subscribe</button>
                     </div>
                 </div>
                 <div class="sidebar-card">
-                    <h3>Schnellzugriff</h3>
+                    <h3>{{ updatesData.sidebar.quickAccess.title }}</h3>
                     <nav class="version-nav">
-                        <a href="#" class="version-link active">v2.5 – November 2024</a>
-                        <a href="#" class="version-link">v2.4 – Oktober 2024</a>
-                        <a href="#" class="version-link">v2.3 – September 2024</a>
-                        <a href="#" class="version-link">v2.2 – August 2024</a>
-                        <a href="#" class="version-link">v2.1 – Juli 2024</a>
-                        <a href="#" class="version-link">v2.0 – Juni 2024</a>
+                        <a v-for="(link, index) in updatesData.sidebar.quickAccess.links" :key="index" href="#"
+                            :class="['version-link', { active: index === 0 }]">{{ link.version }}</a>
                     </nav>
                 </div>
                 <div class="sidebar-card sidebar-cta">
-                    <h3>Noch nicht dabei?</h3>
-                    <p>Lade die App jetzt herunter und erlebe alle Features selbst.</p>
-                    <button class="cta-button">App herunterladen</button>
+                    <h3>{{ updatesData.sidebar.cta.title }}</h3>
+                    <p>{{ updatesData.sidebar.cta.description }}</p>
+                    <button class="cta-button">{{ updatesData.sidebar.cta.buttonText }}</button>
                 </div>
             </aside>
         </section>
@@ -179,8 +71,12 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
+import config from '../config/config.json';
+
+const updatesData = ref(config.updatesView);
 </script>
 
 <style scoped>
@@ -192,7 +88,7 @@ import Footer from '../components/Footer.vue';
 .updates-hero {
     padding: 120px 40px 60px;
     text-align: center;
-    background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
+    /*background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);*/
 }
 
 .updates-hero-content {
