@@ -79,7 +79,7 @@ const section1 = {
 
 const section3 = {
     title: 'More',
-    links: [{ name: 'About', href: '/about' }, { name: 'Contact', href: '/contact' }, { name: 'Beta', href: '/beta' }, { name: 'Suggest a feature', href: '/suggest-a-feature' }, { name: 'Jobs', href: '/jobs' }]
+    links: [{ name: 'About', href: '/about' }, { name: 'Contact', href: '/contact' }, { name: 'Beta', href: '/beta' }, { name: 'Suggest a feature', href: '/suggest-feature' }, { name: 'Jobs', href: '/jobs' }]
 }
 </script>
 

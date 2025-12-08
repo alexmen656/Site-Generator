@@ -40,6 +40,11 @@ const router = createRouter({
       component: () => import('../views/UpdatesView.vue'),
     },
     {
+      path: '/suggest-feature',
+      name: 'suggest-feature',
+      component: () => import('../views/SuggestFeature.vue'),
+    },
+    {
       path: '/privacy-policy',
       name: 'privacy-policy',
       component: () => import('../views/PrivacyPolicy.vue'),
