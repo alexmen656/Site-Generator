@@ -1174,12 +1174,12 @@ function goToDownload() {
 
 .author-handle {
   font-size: 14px;
-  color: #86868b;
+  color: #555;
 }
 
 .review-date {
   font-size: 13px;
-  color: #86868b;
+  color: #555;
   margin-left: auto;
   white-space: nowrap;
 }
@@ -1281,7 +1281,7 @@ function goToDownload() {
 
 .social-stat {
   font-size: 13px;
-  color: #86868b;
+  color: #555;
   flex: 1;
 }
 

@@ -8,7 +8,7 @@
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h4 class="footer-title">{{ config.appName }}</h4>
+                    <h3 class="footer-title">{{ config.appName }}</h3>
                     <ul class="footer-links">
                         <li v-for="link in section1.links" :key="link.name"><a :href="link.href" class="footer-link">{{
                             link.name
@@ -16,7 +16,7 @@
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4 class="footer-title">Resources</h4>
+                    <h3 class="footer-title">Resources</h3>
                     <ul class="footer-links">
                         <li><a href="#" class="footer-link">Help</a></li>
                         <li><a href="#" class="footer-link">Blog</a></li>
@@ -26,7 +26,7 @@
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4 class="footer-title">{{ section3.title }}</h4>
+                    <h3 class="footer-title">{{ section3.title }}</h3>
                     <ul class="footer-links">
                         <li v-for="link in section3.links" :key="link.name"><a :href="link.href" class="footer-link">{{
                             link.name
@@ -34,7 +34,7 @@
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4 class="footer-title">Follow us</h4>
+                    <h3 class="footer-title">Follow us</h3>
                     <div class="social-links">
                         <a :href="social.link" class="social-link" v-for="social in config.socialLinks"
                             :aria-label="social.platform[0].toUpperCase() + social.platform.slice(1).toLowerCase()">
@@ -146,7 +146,7 @@ const section3 = {
 }
 
 .footer-link {
-    color: #a1a1a1;
+    color: #ccc;
     text-decoration: none;
     font-size: 14px;
     transition: color 0.2s;
@@ -162,7 +162,7 @@ const section3 = {
 }
 
 .social-link {
-    color: #a1a1a1;
+    color: #ccc;
     transition: color 0.2s;
     display: flex;
     align-items: center;
@@ -190,7 +190,7 @@ const section3 = {
 .footer-copyright,
 .footer-trademark {
     font-size: 13px;
-    color: #888;
+    color: #bbb;
     margin: 0;
 }
 
