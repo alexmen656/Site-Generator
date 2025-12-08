@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar">
+    <nav :class="['navbar', { 'no-border': isHomeAtTop }]">
         <div class="nav-container">
             <div class="nav-left">
                 <div @click="router.push('/')" class="logo">
@@ -12,8 +12,10 @@
                 <a :href="link.href" class="nav-link" v-for="link in config.links" :key="link.name">{{ link.name }}</a>
             </div>
             <div class="nav-right">
-                <a :href="os == 'android' ? config.androidLink : config.iosLink"><button class="cta-button">{{
-                    config.ctaButtonText }}</button></a>
+                <a :href="os == 'android' ? config.androidLink : config.iosLink"><button class="cta-button">
+                        <p style="text-align: center;">{{
+                            config.ctaButtonText }}</p>
+                    </button></a>
 
                 <div class="menu-icon-con" @click="toggleMobileMenu" :class="{ active: mobileMenuOpen }">
                     <div class="menu-icon-1"></div>
@@ -37,12 +39,32 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
-import { inject, ref } from 'vue'
+import { useRouter, useRoute } from 'vue-router';
+import { inject, ref, computed, onMounted, onUnmounted } from 'vue'
 
 const config: any = inject('config')
 const router = useRouter();
+const route = useRoute();
 const mobileMenuOpen = ref(false);
+
+const isAtTop = ref(true);
+
+function updateIsAtTop() {
+    isAtTop.value = (typeof window !== 'undefined') ? window.scrollY === 0 : true;
+}
+
+onMounted(() => {
+    updateIsAtTop();
+    window.addEventListener('scroll', updateIsAtTop, { passive: true });
+});
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', updateIsAtTop);
+});
+
+const isHomeAtTop = computed(() => {
+    return isAtTop.value && route.name === 'home';
+});
 
 function getOS() {
     const ua = navigator.userAgent || navigator.vendor || (window as any).opera || '';
@@ -74,7 +96,11 @@ const closeMobileMenu = () => {
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     z-index: 100;
-    padding: 12px 0;
+    padding: 14px 0;
+}
+
+.navbar.no-border {
+    border-bottom: none;
 }
 
 .nav-container {
@@ -131,15 +157,18 @@ const closeMobileMenu = () => {
 }
 
 .nav-link {
-    color: #000;
+    color: rgb(16, 16, 16);
+    font-weight: 500;
     text-decoration: none;
     font-size: 15px;
-    font-weight: 400;
+    /*font-weight: 400;*/
+    font-family: "system-ui", -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "System Default", sans-serif;
+    letter-spacing: -0.2px;
     transition: color 0.2s;
 }
 
 .nav-link:hover {
-    color: #007AFF;
+    color: rgb(0, 136, 255);
 }
 
 .nav-right {
@@ -148,16 +177,23 @@ const closeMobileMenu = () => {
     justify-content: flex-end;
     align-items: center;
     gap: 16px;
+    padding: 2px 0;
 }
 
 .cta-button {
-    background: #007AFF;
+    background: rgb(0, 136, 255);
+    /*text-align: center;*/
+    height: 36px;
+    /*colorrgb(0, 136, 255)*/
     color: white;
     border: none;
-    padding: 10px 24px;
-    border-radius: 20px;
+    padding: 8px 20px;
+    border-radius: 100px;
+    /*20px;*/
     font-size: 15px;
     font-weight: 500;
+    font-family: "system-ui", -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "System Default", sans-serif;
+    letter-spacing: -0.4px;
     cursor: pointer;
     transition: background 0.2s;
 }
@@ -225,7 +261,7 @@ const closeMobileMenu = () => {
 }
 
 .dropdown-cta {
-    background: #007AFF;
+    background: rgb(0, 136, 255);
     color: white;
     text-decoration: none;
     padding: 12px 24px;
