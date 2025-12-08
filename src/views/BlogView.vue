@@ -13,7 +13,7 @@
             <div class="blog-grid">
                 <article class="blog-card blog-featured">
                     <div class="blog-card-image">
-                        <img src="@/config/assets/iphone.png" alt="Featured Post">
+                        <img src="/assets/iphone.png" alt="Featured Post">
                         <span class="blog-category">Produktivität</span>
                     </div>
                     <div class="blog-card-content">
@@ -33,7 +33,7 @@
 
                 <article class="blog-card">
                     <div class="blog-card-image">
-                        <img src="@/config/assets/iphone.png" alt="Blog Post">
+                        <img src="/assets/iphone.png" alt="Blog Post">
                         <span class="blog-category">Feature</span>
                     </div>
                     <div class="blog-card-content">
@@ -51,7 +51,7 @@
 
                 <article class="blog-card">
                     <div class="blog-card-image">
-                        <img src="@/config/assets/iphone.png" alt="Blog Post">
+                        <img src="/assets/iphone.png" alt="Blog Post">
                         <span class="blog-category">Tutorial</span>
                     </div>
                     <div class="blog-card-content">
@@ -70,7 +70,7 @@
                 <!--  {{ config.articles.length }}-->
                 <article v-for="article in config.articles" class="blog-card">
                     <div class="blog-card-image">
-                        <img src="@/config/assets/iphone.png" alt="Blog Post">
+                        <img src="/assets/iphone.png" alt="Blog Post">
                         <span class="blog-category">{{ article.category }}</span>
                     </div>
                     <div class="blog-card-content">
@@ -164,7 +164,7 @@
     <!--
     <article class="blog-card">
                     <div class="blog-card-image">
-                        <img src="@/config/assets/iphone.png" alt="Blog Post">
+                        <img src="/assets/iphone.png" alt="Blog Post">
                         <span class="blog-category">Tipps</span>
                     </div>
                     <div class="blog-card-content">
@@ -182,7 +182,7 @@
 
                 <article class="blog-card">
                     <div class="blog-card-image">
-                        <img src="@/config/assets/iphone.png" alt="Blog Post">
+                        <img src="/assets/iphone.png" alt="Blog Post">
                         <span class="blog-category">Interview</span>
                     </div>
                     <div class="blog-card-content">
@@ -200,7 +200,7 @@
 
                 <article class="blog-card">
                     <div class="blog-card-image">
-                        <img src="@/config/assets/iphone.png" alt="Blog Post">
+                        <img src="/assets/iphone.png" alt="Blog Post">
                         <span class="blog-category">Tutorial</span>
                     </div>
                     <div class="blog-card-content">

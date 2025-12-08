@@ -66,7 +66,7 @@
         </div>
       </div>
       <div class="iphone-container">
-        <img height="650" src="@/config/assets/iphone.png"
+        <img height="650" src="/assets/iphone.png"
           alt="iPhone showing app interface"><!--:height="mobile ? '1000' : '650'"-->
       </div>
       <div class="feature-cards-right" v-if="!mobile">
@@ -123,10 +123,10 @@
       </div>
     </section>
     <section class="dowload-section">
-      <button class="download-btn" @click="downloadOnAppStore()"><img height="100" src="@/config/assets/app_store.svg"
+      <button class="download-btn" @click="downloadOnAppStore()"><img height="100" src="/assets/app_store.svg"
           alt="Apple App Store Badge"></button>
-      <button class="download-btn" @click="downloadOnGooglePlay()"><img height="100"
-          src="@/config/assets/google_play.svg" alt="Google Play Store Badge"></button>
+      <button class="download-btn" @click="downloadOnGooglePlay()"><img height="100" src="/assets/google_play.svg"
+          alt="Google Play Store Badge"></button>
     </section>
     <section class="feature-showcase">
       <h2 class="showcase-title">{{ config.showcase_title }}</h2>
@@ -135,7 +135,7 @@
           <span class="showcase-tag">{{ feature.title }}</span>
           <h3 class="showcase-card-title" v-html="feature.description"></h3>
           <div class="showcase-image-container">
-            <img src="@/config/assets/iphone.png" :alt="'Feature ' + feature.title">
+            <img src="/assets/iphone.png" :alt="'Feature ' + feature.title">
           </div>
         </div>
       </div>
@@ -232,7 +232,7 @@
               <div class="video-overlay">
                 <span class="video-caption">Meine neue Lieblings-App</span>
               </div>
-              <img src="@/config/assets/iphone.png" alt="Video preview" class="video-preview-img">
+              <img src="/assets/iphone.png" alt="Video preview" class="video-preview-img">
             </div>
             <div class="review-social-footer">
               <div class="social-avatars">

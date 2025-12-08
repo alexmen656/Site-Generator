@@ -48,7 +48,7 @@
                         </div>
                     </div>
                     <div class="release-image-showcase">
-                        <img src="@/config/assets/iphone.png" alt="Version 2.5 Preview" class="release-phone">
+                        <img src="/assets/iphone.png" alt="Version 2.5 Preview" class="release-phone">
                     </div>
                 </article>
                 <article class="release-card">
