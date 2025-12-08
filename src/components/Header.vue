@@ -1,5 +1,5 @@
 <template>
-    <nav :class="['navbar', { 'no-border': isHomeAtTop }]">
+    <nav :class="['navbar', { 'support-theme': isSupportAtTop, 'no-border': isTransparentAtTop }]">
         <div class="nav-container">
             <div class="nav-left">
                 <div @click="router.push('/')" class="logo">
@@ -13,7 +13,7 @@
             </div>
             <div class="nav-right">
                 <a :href="os == 'android' ? config.androidLink : config.iosLink"><button class="cta-button">
-                        <p style="text-align: center;">{{
+                        <p style="text-align: center; font-weight: 500;">{{
                             config.ctaButtonText }}</p>
                     </button></a>
 
@@ -62,8 +62,12 @@ onUnmounted(() => {
     window.removeEventListener('scroll', updateIsAtTop);
 });
 
-const isHomeAtTop = computed(() => {
-    return isAtTop.value && route.name === 'home';
+const isSupportAtTop = computed(() => {
+    return isAtTop.value && route.name === 'support';
+});
+
+const isTransparentAtTop = computed(() => {
+    return isAtTop.value && (route.name === 'home' || route.name === 'support');
 });
 
 function getOS() {
@@ -103,6 +107,11 @@ const closeMobileMenu = () => {
     border-bottom: none;
 }
 
+.navbar.support-theme {
+    background: #F5F5F7;
+    backdrop-filter: none;
+}
+
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -120,14 +129,17 @@ const closeMobileMenu = () => {
     display: flex;
     align-items: center;
     cursor: pointer;
-    gap: 8px;
+    gap: 10px;
+    /* letter-spacing: -0.4px;
+    font-weight: 600;
+    font-family: "system-ui", -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "System Default", sans-serif;*/
 }
 
 .logo-icon {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     background: linear-gradient(135deg, #FF9500 0%, #FF6B00 100%);
-    border-radius: 8px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,6 +159,8 @@ const closeMobileMenu = () => {
     font-size: 20px;
     font-weight: 600;
     color: #000;
+    font-family: "system-ui", -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "System Default", sans-serif;
+    letter-spacing: -0.4px;
 }
 
 .nav-center {
