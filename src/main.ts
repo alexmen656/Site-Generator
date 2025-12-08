@@ -9,11 +9,11 @@ import router from './router'
 //config
 import config from './config/config.json'
 
+//App.config.devtools = false
 const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
 
 app.provide('config', config)
-
 app.mount('#app')

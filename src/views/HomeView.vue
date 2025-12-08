@@ -13,7 +13,7 @@
       </div>
     </section>
     <section class="iphone-section">
-      <div class="feature-cards-left">
+      <div class="feature-cards-left" v-if="!mobile">
         <div class="feature-card card-float-1">
           <div class="card-connector connector-left"></div>
           <div class="feature-card-icon icon-avatar">
@@ -54,7 +54,6 @@
             <div class="feature-card-subtitle">Reward redeemed — tracked</div>
           </div>
         </div>
-
         <div class="feature-card card-float-5">
           <div class="card-connector connector-left"></div>
           <div class="feature-card-icon icon-yellow">
@@ -67,9 +66,10 @@
         </div>
       </div>
       <div class="iphone-container">
-        <img height="650" src="@/config/assets/iphone.png" alt="iPhone showing app interface">
+        <img height="650" src="@/config/assets/iphone.png"
+          alt="iPhone showing app interface"><!--:height="mobile ? '1000' : '650'"-->
       </div>
-      <div class="feature-cards-right">
+      <div class="feature-cards-right" v-if="!mobile">
         <div class="feature-card card-float-1">
           <div class="card-connector connector-right"></div>
           <div class="feature-card-icon icon-brown">
@@ -298,6 +298,7 @@ import Footer from '../components/Footer.vue';
 import { inject } from 'vue'
 
 const config: any = inject('config')
+const mobile = window.innerWidth <= 900;
 
 const downloadOnAppStore = () => {
   location.href = config.iosLink
@@ -633,6 +634,14 @@ function goToDownload() {
   padding: 0 24px;
 }
 
+@media (max-width: 900px) {
+  .hero-content {
+    padding: 14px;
+    /*8*/
+    margin: 40px auto;
+  }
+}
+
 .hero-title {
   font-size: 64px;
   font-weight: 700;
@@ -641,6 +650,12 @@ function goToDownload() {
   margin: 0 0 24px 0;
   letter-spacing: -0.02em;
 }
+
+/*@media (max-width: 900px) {
+  .hero-title {
+    font-size: 112px;
+  }
+}*/
 
 .hero-description {
   font-size: 22px;
@@ -734,7 +749,7 @@ function goToDownload() {
   }
 
   .hero-title {
-    font-size: 40px;
+    font-size: 48px;
   }
 
   .hero-description {
@@ -752,7 +767,7 @@ function goToDownload() {
   }
 
   .iphone-container img {
-    height: 450px;
+    height: 600px;
   }
 }
 

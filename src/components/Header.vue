@@ -14,17 +14,35 @@
             <div class="nav-right">
                 <a :href="os == 'android' ? config.androidLink : config.iosLink"><button class="cta-button">{{
                     config.ctaButtonText }}</button></a>
+
+                <div class="menu-icon-con" @click="toggleMobileMenu" :class="{ active: mobileMenuOpen }">
+                    <div class="menu-icon-1"></div>
+                    <div class="menu-icon-2"></div>
+                </div>
             </div>
         </div>
+        <Transition name="dropdown">
+            <div v-if="mobileMenuOpen" class="dropdown-menu">
+                <a v-for="link in config.links" :key="link.name" :href="link.href" class="dropdown-link"
+                    @click="closeMobileMenu">
+                    {{ link.name }}
+                </a>
+                <a :href="os == 'android' ? config.androidLink : config.iosLink" class="dropdown-cta"
+                    @click="closeMobileMenu">
+                    {{ config.ctaButtonText }}
+                </a>
+            </div>
+        </Transition>
     </nav>
 </template>
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
-import { inject } from 'vue'
+import { inject, ref } from 'vue'
 
 const config: any = inject('config')
 const router = useRouter();
+const mobileMenuOpen = ref(false);
 
 function getOS() {
     const ua = navigator.userAgent || navigator.vendor || (window as any).opera || '';
@@ -35,9 +53,15 @@ function getOS() {
     return "unknown";
 }
 
-
 const os = getOS();
-console.log("Detected OS:", os);
+
+const toggleMobileMenu = () => {
+    mobileMenuOpen.value = !mobileMenuOpen.value;
+};
+
+const closeMobileMenu = () => {
+    mobileMenuOpen.value = false;
+};
 </script>
 
 <style scoped>
@@ -122,19 +146,15 @@ console.log("Detected OS:", os);
     flex: 1;
     display: flex;
     justify-content: flex-end;
-}
-
-@media (max-width: 768px) {
-    .nav-center {
-        display: none;
-    }
+    align-items: center;
+    gap: 16px;
 }
 
 .cta-button {
     background: #007AFF;
     color: white;
     border: none;
-    padding: 8px 20px;
+    padding: 10px 24px;
     border-radius: 20px;
     font-size: 15px;
     font-weight: 500;
@@ -142,16 +162,112 @@ console.log("Detected OS:", os);
     transition: background 0.2s;
 }
 
-.cta-button a {
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    transition: background 0.2s;
-
-}
-
 .cta-button:hover {
     background: #0051D5;
+}
+
+.menu-icon-con {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    width: 24px;
+    height: 18px;
+    justify-content: center;
+}
+
+.menu-icon-1,
+.menu-icon-2 {
+    width: 24px;
+    height: 2px;
+    background-color: #000;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+}
+
+.menu-icon-con.active .menu-icon-1 {
+    transform: rotate(45deg) translateY(5px);
+}
+
+.menu-icon-con.active .menu-icon-2 {
+    transform: rotate(-45deg) translateY(-5px);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-link {
+    color: #000;
+    text-decoration: none;
+    padding: 16px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    border-bottom: 1px solid #F5F5F7;
+    transition: background 0.2s;
+}
+
+.dropdown-link:last-of-type {
+    border-bottom: none;
+}
+
+.dropdown-link:hover {
+    background: #F5F5F7;
+}
+
+.dropdown-cta {
+    background: #007AFF;
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    margin: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.dropdown-cta:hover {
+    background: #0051D5;
+}
+
+.dropdown-enter-active,
+.dropdown-leave-active {
+    transition: all 0.3s ease;
+}
+
+.dropdown-enter-from {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.dropdown-leave-to {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+@media (max-width: 768px) {
+    .nav-center {
+        display: none;
+    }
+
+    .menu-icon-con {
+        display: flex;
+    }
+
+    .cta-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
 }
 </style>
