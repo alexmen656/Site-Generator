@@ -12,11 +12,11 @@
                 <a :href="link.href" class="nav-link" v-for="link in config.links" :key="link.name">{{ link.name }}</a>
             </div>
             <div class="nav-right">
-                <a :href="os == 'android' ? config.androidLink : config.iosLink"><button class="cta-button">
+                <a class="cta-a" :href="os == 'android' ? config.androidLink : config.iosLink"><button
+                        class="cta-button">
                         <p style="text-align: center; font-weight: 500;">{{
                             config.ctaButtonText }}</p>
                     </button></a>
-
                 <div class="menu-icon-con" @click="toggleMobileMenu" :class="{ active: mobileMenuOpen }">
                     <div class="menu-icon-1"></div>
                     <div class="menu-icon-2"></div>
@@ -130,9 +130,6 @@ const closeMobileMenu = () => {
     align-items: center;
     cursor: pointer;
     gap: 10px;
-    /* letter-spacing: -0.4px;
-    font-weight: 600;
-    font-family: "system-ui", -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "System Default", sans-serif;*/
 }
 
 .logo-icon {
@@ -175,7 +172,6 @@ const closeMobileMenu = () => {
     font-weight: 500;
     text-decoration: none;
     font-size: 15px;
-    /*font-weight: 400;*/
     font-family: "system-ui", -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "System Default", sans-serif;
     letter-spacing: -0.2px;
     transition: color 0.2s;
@@ -196,14 +192,11 @@ const closeMobileMenu = () => {
 
 .cta-button {
     background: rgb(0, 136, 255);
-    /*text-align: center;*/
     height: 36px;
-    /*colorrgb(0, 136, 255)*/
     color: white;
     border: none;
     padding: 8px 20px;
     border-radius: 100px;
-    /*20px;*/
     font-size: 15px;
     font-weight: 500;
     font-family: "system-ui", -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "System Default", sans-serif;
@@ -313,6 +306,10 @@ const closeMobileMenu = () => {
 
     .menu-icon-con {
         display: flex;
+    }
+
+    .cta-a {
+        display: none;
     }
 
     .cta-button {
