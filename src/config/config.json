@@ -591,5 +591,27 @@
     }
   ],
   "privacyPolicyEffectiveDate": "17. December 2024",
-  "termsOfUseEffectiveDate": "17. December 2024"
+  "termsOfUseEffectiveDate": "17. December 2024",
+  "footer": {
+    "section1": {
+      "title": "Product",
+      "links": [
+        { "name": "Try for Free", "href": "/try-for-free" },
+        { "name": "Get on Setapp", "href": "/get-on-setapp" },
+        { "name": "Use Cases", "href": "/use-cases" },
+        { "name": "Updates", "href": "/updates" },
+        { "name": "Pricing", "href": "/pricing" }
+      ]
+    },
+    "section3": {
+      "title": "More",
+      "links": [
+        { "name": "About", "href": "/about" },
+        { "name": "Contact", "href": "/contact" },
+        { "name": "Beta", "href": "/beta" },
+        { "name": "Suggest a feature", "href": "/suggest-feature" },
+        { "name": "Jobs", "href": "/jobs" }
+      ]
+    }
+  }
 }

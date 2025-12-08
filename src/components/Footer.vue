@@ -10,26 +10,28 @@
                 <div class="footer-column">
                     <h3 class="footer-title">{{ config.appName }}</h3>
                     <ul class="footer-links">
-                        <li v-for="link in section1.links" :key="link.name"><a :href="link.href" class="footer-link">{{
-                            link.name
+                        <li v-for="link in config.footer.section1.links" :key="link.name"><a :href="link.href"
+                                class="footer-link">{{
+                                    link.name
                                 }}</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3 class="footer-title">Resources</h3>
                     <ul class="footer-links">
-                        <li><a href="#" class="footer-link">Help</a></li>
-                        <li><a href="#" class="footer-link">Blog</a></li>
+                        <li><router-link to="/support" class="footer-link">Support</router-link></li>
+                        <li><router-link to="/blog" class="footer-link">Blog</router-link></li>
                         <li><router-link to="/terms-of-use" class="footer-link">Terms of use</router-link></li>
                         <li><router-link to="/privacy-policy" class="footer-link">Privacy policy</router-link></li>
                         <li><a href="#" class="footer-link">Media Kit</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3 class="footer-title">{{ section3.title }}</h3>
+                    <h3 class="footer-title">{{ config.footer.section3.title }}</h3>
                     <ul class="footer-links">
-                        <li v-for="link in section3.links" :key="link.name"><a :href="link.href" class="footer-link">{{
-                            link.name
+                        <li v-for="link in config.footer.section3.links" :key="link.name"><a :href="link.href"
+                                class="footer-link">{{
+                                    link.name
                                 }}</a></li>
                     </ul>
                 </div>
@@ -71,16 +73,6 @@ import { inject } from 'vue'
 
 const config: any = inject('config')
 const year = new Date().getFullYear();
-
-const section1 = {
-    title: 'Product',
-    links: [{ name: 'Try for Free', href: '/try-for-free' }, { name: 'Get on Setapp', href: '/get-on-setapp' }, { name: 'Use Cases', href: '/use-cases' }, { name: 'Updates', href: '/updates' }, { name: 'Pricing', href: '/pricing' }]
-}
-
-const section3 = {
-    title: 'More',
-    links: [{ name: 'About', href: '/about' }, { name: 'Contact', href: '/contact' }, { name: 'Beta', href: '/beta' }, { name: 'Suggest a feature', href: '/suggest-feature' }, { name: 'Jobs', href: '/jobs' }]
-}
 </script>
 
 <style scoped>
