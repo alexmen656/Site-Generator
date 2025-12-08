@@ -71,8 +71,11 @@ const isBlogOrUpdatesAtTop = computed(() => {
     return isAtTop.value && (route.name === 'blog' || route.name === 'updates');
 });
 
+//debug - I was testing production site lol
+console.log(route.name);
+
 const isTransparentAtTop = computed(() => {
-    return isAtTop.value && (route.name === 'home' || route.name === 'support' || route.name === 'terms-of-use' || route.name === 'privacy-policy' || route.name === 'blog' || route.name === 'updates');
+    return isAtTop.value && (route.name === 'home' || route.name === 'support' || route.name === 'support-detail' || route.name === 'terms-of-use' || route.name === 'privacy-policy' || route.name === 'blog' || route.name === 'updates');
 });
 
 function getOS() {

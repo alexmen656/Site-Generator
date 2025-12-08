@@ -58,40 +58,6 @@
       "description": "Find in a flash.<br />Never search again."
     }
   ],
-  "articles": [
-    {
-      "category": "News",
-      "date": "10. November 2024",
-      "readTime": "2 Min. Lesezeit",
-      "title": "Wir sind App des Tages!",
-      "excerpt": "Apple hat uns im App Store als \"App des Tages\" ausgezeichnet. Danke an alle!",
-      "readMoreLink": "#"
-    },
-    {
-      "category": "Tipps",
-      "date": "5. November 2024",
-      "readTime": "6 Min. Lesezeit",
-      "title": "Tastenkürzel für Power-User",
-      "excerpt": "Diese versteckten Shortcuts machen dich zum Profi.",
-      "readMoreLink": "#"
-    },
-    {
-      "category": "Interview",
-      "date": "1. November 2024",
-      "readTime": "8 Min. Lesezeit",
-      "title": "Im Gespräch mit unserem Design-Team",
-      "excerpt": "Einblicke in den Designprozess hinter der neuen Benutzeroberfläche.",
-      "readMoreLink": "#"
-    },
-    {
-      "category": "Tutorial",
-      "date": "28. Oktober 2024",
-      "readTime": "5 Min. Lesezeit",
-      "title": "Automatisierung mit Shortcuts",
-      "excerpt": "Verbinde unsere App mit iOS Shortcuts für maximale Effizienz.",
-      "readMoreLink": "#"
-    }
-  ],
   "supportCards": [
     {
       "title": "Explore Paste",
@@ -794,6 +760,113 @@
         { "name": "Suggest a feature", "href": "/suggest-feature" },
         { "name": "Jobs", "href": "/jobs" }
       ]
+    }
+  },
+  "blogView": {
+    "hero": {
+      "title": "Blog",
+      "description": "Tips, tricks, and insights about productivity and our app."
+    },
+    "featuredPost": {
+      "image": "/assets/iphone.png",
+      "category": "Productivity",
+      "date": "November 25, 2024",
+      "readTime": "5 min. read",
+      "title": "10 Tips for More Productivity in Daily Life",
+      "excerpt": "Discover proven strategies to make your day more efficient and get more out of your time. From morning routines to clever app tricks - we'll show you how it's done.",
+      "link": "#"
+    },
+    "posts": [
+      {
+        "image": "/assets/iphone.png",
+        "category": "Feature",
+        "date": "November 20, 2024",
+        "readTime": "3 min. read",
+        "title": "The New Widget Feature in Detail",
+        "excerpt": "Everything you need to know about our new homescreen widgets.",
+        "link": "#"
+      },
+      {
+        "image": "/assets/iphone.png",
+        "category": "Tutorial",
+        "date": "November 15, 2024",
+        "readTime": "4 min. read",
+        "title": "How to Set Up Cloud Sync",
+        "excerpt": "Step-by-step guide to setting up cloud synchronization.",
+        "link": "#"
+      },
+      {
+        "image": "/assets/iphone.png",
+        "category": "News",
+        "date": "10. November 2024",
+        "readTime": "2 Min. Lesezeit",
+        "title": "Wir sind App des Tages!",
+        "excerpt": "Apple hat uns im App Store als \"App des Tages\" ausgezeichnet. Danke an alle!",
+        "readMoreLink": "#"
+      },
+      {
+        "image": "/assets/iphone.png",
+        "category": "Tipps",
+        "date": "5. November 2024",
+        "readTime": "6 Min. Lesezeit",
+        "title": "Tastenkürzel für Power-User",
+        "excerpt": "Diese versteckten Shortcuts machen dich zum Profi.",
+        "readMoreLink": "#"
+      },
+      {
+        "image": "/assets/iphone.png",
+        "category": "Interview",
+        "date": "1. November 2024",
+        "readTime": "8 Min. Lesezeit",
+        "title": "Im Gespräch mit unserem Design-Team",
+        "excerpt": "Einblicke in den Designprozess hinter der neuen Benutzeroberfläche.",
+        "readMoreLink": "#"
+      },
+      {
+        "image": "/assets/iphone.png",
+        "category": "Tutorial",
+        "date": "28. Oktober 2024",
+        "readTime": "5 Min. Lesezeit",
+        "title": "Automatisierung mit Shortcuts",
+        "excerpt": "Verbinde unsere App mit iOS Shortcuts für maximale Effizienz.",
+        "readMoreLink": "#"
+      }
+    ],
+    "sidebar": {
+      "categories": {
+        "title": "Categories",
+        "items": [
+          { "name": "All Posts", "count": 24, "link": "#" },
+          { "name": "Productivity", "count": 8, "link": "#" },
+          { "name": "Tutorials", "count": 6, "link": "#" },
+          { "name": "Features", "count": 5, "link": "#" },
+          { "name": "News", "count": 3, "link": "#" },
+          { "name": "Interviews", "count": 2, "link": "#" }
+        ]
+      },
+      "newsletter": {
+        "title": "Newsletter",
+        "description": "New articles directly in your inbox.",
+        "placeholder": "your@email.com",
+        "buttonText": "Subscribe"
+      },
+      "popularPosts": {
+        "title": "Popular Articles",
+        "posts": [
+          { "number": "01", "title": "10 Tips for More Productivity", "link": "#" },
+          { "number": "02", "title": "The New Widget Feature", "link": "#" },
+          { "number": "03", "title": "Setting Up Cloud Sync", "link": "#" },
+          { "number": "04", "title": "Keyboard Shortcuts for Power Users", "link": "#" }
+        ]
+      },
+      "cta": {
+        "title": "Get Started Now",
+        "description": "Try all features for free.",
+        "buttonText": "Download App"
+      }
+    },
+    "loadMore": {
+      "buttonText": "Load More Articles"
     }
   }
 }

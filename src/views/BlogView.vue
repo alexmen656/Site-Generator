@@ -3,9 +3,9 @@
         <Header></Header>
         <section class="blog-hero">
             <div class="blog-hero-content">
-                <h1 class="blog-hero-title">Blog</h1>
+                <h1 class="blog-hero-title">{{ config.blogView.hero.title }}</h1>
                 <p class="blog-hero-description">
-                    Tipps, Tricks und Einblicke rund um Produktivität und unsere App.
+                    {{ config.blogView.hero.description }}
                 </p>
             </div>
         </section>
@@ -13,208 +13,81 @@
             <div class="blog-grid">
                 <article class="blog-card blog-featured">
                     <div class="blog-card-image">
-                        <img src="/assets/iphone.png" alt="Featured Post">
-                        <span class="blog-category">Produktivität</span>
+                        <img :src="config.blogView.featuredPost.image" alt="Featured Post">
+                        <span class="blog-category">{{ config.blogView.featuredPost.category }}</span>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-meta">
-                            <span class="blog-date">25. November 2024</span>
-                            <span class="blog-read-time">5 Min. Lesezeit</span>
+                            <span class="blog-date">{{ config.blogView.featuredPost.date }}</span>
+                            <span class="blog-read-time">{{ config.blogView.featuredPost.readTime }}</span>
                         </div>
-                        <h2 class="blog-card-title">10 Tipps für mehr Produktivität im Alltag</h2>
+                        <h2 class="blog-card-title">{{ config.blogView.featuredPost.title }}</h2>
                         <p class="blog-card-excerpt">
-                            Entdecke bewährte Strategien, um deinen Tag effizienter zu gestalten und mehr
-                            aus deiner Zeit herauszuholen. Von morgendlichen Routinen bis hin zu cleveren
-                            App-Tricks - wir zeigen dir, wie es geht.
+                            {{ config.blogView.featuredPost.excerpt }}
                         </p>
-                        <a href="#" class="blog-read-more">Weiterlesen →</a>
+                        <a :href="config.blogView.featuredPost.link" class="blog-read-more">Read more →</a>
                     </div>
                 </article>
-
-                <article class="blog-card">
+                <article v-for="post in config.blogView.posts" :key="post.title" class="blog-card">
                     <div class="blog-card-image">
-                        <img src="/assets/iphone.png" alt="Blog Post">
-                        <span class="blog-category">Feature</span>
+                        <img :src="post.image" alt="Blog Post">
+                        <span class="blog-category">{{ post.category }}</span>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-meta">
-                            <span class="blog-date">20. November 2024</span>
-                            <span class="blog-read-time">3 Min. Lesezeit</span>
+                            <span class="blog-date">{{ post.date }}</span>
+                            <span class="blog-read-time">{{ post.readTime }}</span>
                         </div>
-                        <h3 class="blog-card-title">Die neue Widget-Funktion im Detail</h3>
+                        <h3 class="blog-card-title">{{ post.title }}</h3>
                         <p class="blog-card-excerpt">
-                            Alles was du über unsere neuen Homescreen-Widgets wissen musst.
+                            {{ post.excerpt }}
                         </p>
-                        <a href="#" class="blog-read-more">Weiterlesen →</a>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <div class="blog-card-image">
-                        <img src="/assets/iphone.png" alt="Blog Post">
-                        <span class="blog-category">Tutorial</span>
-                    </div>
-                    <div class="blog-card-content">
-                        <div class="blog-meta">
-                            <span class="blog-date">15. November 2024</span>
-                            <span class="blog-read-time">4 Min. Lesezeit</span>
-                        </div>
-                        <h3 class="blog-card-title">So richtest du Cloud Sync ein</h3>
-                        <p class="blog-card-excerpt">
-                            Schritt-für-Schritt Anleitung zur Einrichtung der Cloud-Synchronisation.
-                        </p>
-                        <a href="#" class="blog-read-more">Weiterlesen →</a>
-                    </div>
-                </article>
-
-                <!--  {{ config.articles.length }}-->
-                <article v-for="article in config.articles" class="blog-card">
-                    <div class="blog-card-image">
-                        <img src="/assets/iphone.png" alt="Blog Post">
-                        <span class="blog-category">{{ article.category }}</span>
-                    </div>
-                    <div class="blog-card-content">
-                        <div class="blog-meta">
-                            <span class="blog-date">{{ article.date }}</span>
-                            <span class="blog-read-time">{{ article.readTime }}</span>
-                        </div>
-                        <h3 class="blog-card-title">{{ article.title }}</h3>
-                        <p class="blog-card-excerpt">
-                            {{ article.excerpt }}
-                        </p>
-                        <a :href="article.readMoreLink" class="blog-read-more">Weiterlesen →</a>
+                        <a :href="post.link" class="blog-read-more">Read more →</a>
                     </div>
                 </article>
             </div>
             <aside class="blog-sidebar">
                 <div class="sidebar-card">
-                    <h3>Kategorien</h3>
+                    <h3>{{ config.blogView.sidebar.categories.title }}</h3>
                     <nav class="category-nav">
-                        <a href="#" class="category-link">
-                            <span>Alle Beiträge</span>
-                            <span class="category-count">24</span>
-                        </a>
-                        <a href="#" class="category-link">
-                            <span>Produktivität</span>
-                            <span class="category-count">8</span>
-                        </a>
-                        <a href="#" class="category-link">
-                            <span>Tutorials</span>
-                            <span class="category-count">6</span>
-                        </a>
-                        <a href="#" class="category-link">
-                            <span>Features</span>
-                            <span class="category-count">5</span>
-                        </a>
-                        <a href="#" class="category-link">
-                            <span>News</span>
-                            <span class="category-count">3</span>
-                        </a>
-                        <a href="#" class="category-link">
-                            <span>Interviews</span>
-                            <span class="category-count">2</span>
+                        <a v-for="category in config.blogView.sidebar.categories.items" :key="category.name"
+                            :href="category.link" class="category-link">
+                            <span>{{ category.name }}</span>
+                            <span class="category-count">{{ category.count }}</span>
                         </a>
                     </nav>
                 </div>
-
                 <div class="sidebar-card">
-                    <h3>Newsletter</h3>
-                    <p>Neue Artikel direkt in deine Inbox.</p>
+                    <h3>{{ config.blogView.sidebar.newsletter.title }}</h3>
+                    <p>{{ config.blogView.sidebar.newsletter.description }}</p>
                     <div class="newsletter-form">
-                        <input type="email" placeholder="deine@email.com" class="newsletter-input">
-                        <button class="newsletter-btn">Abonnieren</button>
+                        <input type="email" :placeholder="config.blogView.sidebar.newsletter.placeholder"
+                            class="newsletter-input">
+                        <button class="newsletter-btn">{{ config.blogView.sidebar.newsletter.buttonText }}</button>
                     </div>
                 </div>
-
                 <div class="sidebar-card sidebar-popular">
-                    <h3>Beliebte Artikel</h3>
+                    <h3>{{ config.blogView.sidebar.popularPosts.title }}</h3>
                     <div class="popular-posts">
-                        <a href="#" class="popular-post">
-                            <span class="popular-number">01</span>
-                            <span class="popular-title">10 Tipps für mehr Produktivität</span>
-                        </a>
-                        <a href="#" class="popular-post">
-                            <span class="popular-number">02</span>
-                            <span class="popular-title">Die neue Widget-Funktion</span>
-                        </a>
-                        <a href="#" class="popular-post">
-                            <span class="popular-number">03</span>
-                            <span class="popular-title">Cloud Sync einrichten</span>
-                        </a>
-                        <a href="#" class="popular-post">
-                            <span class="popular-number">04</span>
-                            <span class="popular-title">Tastenkürzel für Power-User</span>
+                        <a v-for="post in config.blogView.sidebar.popularPosts.posts" :key="post.number"
+                            :href="post.link" class="popular-post">
+                            <span class="popular-number">{{ post.number }}</span>
+                            <span class="popular-title">{{ post.title }}</span>
                         </a>
                     </div>
                 </div>
-
                 <div class="sidebar-card sidebar-cta">
-                    <h3>Jetzt starten</h3>
-                    <p>Probiere alle Features kostenlos aus.</p>
-                    <button class="cta-button">App herunterladen</button>
+                    <h3>{{ config.blogView.sidebar.cta.title }}</h3>
+                    <p>{{ config.blogView.sidebar.cta.description }}</p>
+                    <button class="cta-button">{{ config.blogView.sidebar.cta.buttonText }}</button>
                 </div>
             </aside>
         </section>
         <div class="load-more-container">
-            <button class="load-more-btn">Mehr Artikel laden</button>
+            <button class="load-more-btn">{{ config.blogView.loadMore.buttonText }}</button>
         </div>
         <Footer></Footer>
     </div>
-
-    <!--
-    <article class="blog-card">
-                    <div class="blog-card-image">
-                        <img src="/assets/iphone.png" alt="Blog Post">
-                        <span class="blog-category">Tipps</span>
-                    </div>
-                    <div class="blog-card-content">
-                        <div class="blog-meta">
-                            <span class="blog-date">5. November 2024</span>
-                            <span class="blog-read-time">6 Min. Lesezeit</span>
-                        </div>
-                        <h3 class="blog-card-title">Tastenkürzel für Power-User</h3>
-                        <p class="blog-card-excerpt">
-                            Diese versteckten Shortcuts machen dich zum Profi.
-                        </p>
-                        <a href="#" class="blog-read-more">Weiterlesen →</a>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <div class="blog-card-image">
-                        <img src="/assets/iphone.png" alt="Blog Post">
-                        <span class="blog-category">Interview</span>
-                    </div>
-                    <div class="blog-card-content">
-                        <div class="blog-meta">
-                            <span class="blog-date">1. November 2024</span>
-                            <span class="blog-read-time">8 Min. Lesezeit</span>
-                        </div>
-                        <h3 class="blog-card-title">Im Gespräch mit unserem Design-Team</h3>
-                        <p class="blog-card-excerpt">
-                            Einblicke in den Designprozess hinter der neuen Benutzeroberfläche.
-                        </p>
-                        <a href="#" class="blog-read-more">Weiterlesen →</a>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <div class="blog-card-image">
-                        <img src="/assets/iphone.png" alt="Blog Post">
-                        <span class="blog-category">Tutorial</span>
-                    </div>
-                    <div class="blog-card-content">
-                        <div class="blog-meta">
-                            <span class="blog-date">28. Oktober 2024</span>
-                            <span class="blog-read-time">5 Min. Lesezeit</span>
-                        </div>
-                        <h3 class="blog-card-title">Automatisierung mit Shortcuts</h3>
-                        <p class="blog-card-excerpt">
-                            Verbinde unsere App mit iOS Shortcuts für maximale Effizienz.
-                        </p>
-                        <a href="#" class="blog-read-more">Weiterlesen →</a>
-                    </div>
-                </article>-->
 </template>
 
 <script setup lang="ts">
@@ -234,7 +107,6 @@ const config: any = inject('config')
 .blog-hero {
     padding: 120px 40px 60px;
     text-align: center;
-    /*background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);*/
 }
 
 .blog-hero-content {
