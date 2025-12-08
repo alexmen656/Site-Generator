@@ -1,6 +1,6 @@
-# Site Generator
+# Website for Pocketz App (Site Generator)
 
-This is a website builder wehere you can configure all texts and images in config.json, atm it's more a website for Pocketz (pocketz.app), but I plan to add a CMS later to make it easibly editable and reusabele.
+Site Generator is a website builder where you can configure all texts and images in the `config.json` file. At the moment, it is primarily a website for Pocketz (pocketz.app), but I plan to add a CMS later to make it easily editable and reusable.
 
 ## Credits
 
