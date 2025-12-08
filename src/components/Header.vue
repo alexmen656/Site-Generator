@@ -63,11 +63,11 @@ onUnmounted(() => {
 });
 
 const isSupportAtTop = computed(() => {
-    return isAtTop.value && route.name === 'support';
+    return isAtTop.value && (route.name === 'support' || route.name === 'support-detail' || route.name === 'privacy-policy' || route.name === 'terms-of-use');
 });
 
 const isTransparentAtTop = computed(() => {
-    return isAtTop.value && (route.name === 'home' || route.name === 'support');
+    return isAtTop.value && (route.name === 'home' || route.name === 'support' || route.name === 'terms-of-use' || route.name === 'privacy-policy');
 });
 
 function getOS() {
