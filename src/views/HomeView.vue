@@ -169,122 +169,73 @@
       </div>
     </section>
     <section class="reviews-section">
-      <h2 class="reviews-title">Was unsere Nutzer sagen.</h2>
+      <h2 class="reviews-title">{{ config.reviews.title }}</h2>
       <div class="reviews-grid">
-        <div class="reviews-column">
-          <div class="review-card review-tweet">
-            <div class="review-header">
-              <div class="review-avatar">
-                <span>👨‍💻</span>
+        <div class="reviews-column" v-for="(columnReviews, colIndex) in groupedReviews" :key="colIndex">
+          <template v-for="review in columnReviews" :key="review.name">
+            <div v-if="review.type === 'tweet'" class="review-card review-tweet">
+              <div class="review-header">
+                <div class="review-avatar">
+                  <span>{{ review.avatar }}</span>
+                </div>
+                <div class="review-author">
+                  <span class="author-name">{{ review.name }}</span>
+                  <span class="author-handle">{{ review.handle }}</span>
+                </div>
               </div>
-              <div class="review-author">
-                <span class="author-name">Max Mustermann</span>
-                <span class="author-handle">@maxmuster</span>
+              <template v-if="Array.isArray(review.texts)">
+                <p v-for="(text, idx) in review.texts" :key="idx" class="review-text">{{ text }}</p>
+              </template>
+              <p v-else class="review-text">{{ review.text }}</p>
+            </div>
+            <div v-else-if="review.type === 'testimonial'" class="review-card review-testimonial">
+              <div class="review-header">
+                <div class="review-avatar">
+                  <span>{{ review.avatar }}</span>
+                </div>
+                <div class="review-author">
+                  <span class="author-name">{{ review.name }}</span>
+                  <span class="author-handle">{{ review.handle }}</span>
+                </div>
+                <span class="review-date">{{ review.date }}</span>
+              </div>
+              <p class="review-text">{{ review.text }}</p>
+            </div>
+            <div v-else-if="review.type === 'appstore'" class="review-card review-appstore">
+              <div class="review-header">
+                <span class="review-store-title">{{ review.title }}</span>
+                <span class="review-date">{{ review.date }}</span>
+              </div>
+              <div class="review-stars">{{ '★'.repeat(review.stars) }}</div>
+              <p class="review-text">{{ review.text }}</p>
+            </div>
+            <div v-else-if="review.type === 'social'" class="review-card review-social">
+              <div class="review-header">
+                <div class="review-avatar avatar-small">
+                  <span>{{ review.avatar }}</span>
+                </div>
+                <div class="review-author">
+                  <span class="author-name">{{ review.name }}</span>
+                  <span class="author-handle">{{ review.handle }}</span>
+                </div>
+              </div>
+              <div class="review-video-placeholder">
+                <div class="video-overlay">
+                  <span class="video-caption">{{ review.videoCaption }}</span>
+                </div>
+                <img src="/assets/iphone.png" alt="Video preview" class="video-preview-img">
+              </div>
+              <div class="review-social-footer">
+                <div class="social-avatars">
+                  <span class="mini-avatar">👤</span>
+                  <span class="mini-avatar">👤</span>
+                  <span class="mini-avatar">👤</span>
+                </div>
+                <span class="social-stat">{{ review.socialStat }}</span>
+                <button v-if="review.viewMoreBtn" class="view-more-btn">View more +</button>
               </div>
             </div>
-            <p class="review-text">
-              Seit ich diese App benutze, hat sich meine Produktivität verdoppelt. Endlich habe ich alles im Griff!
-            </p>
-            <p class="review-text">
-              Klare Empfehlung für alle, die organisiert bleiben wollen. 🙌
-            </p>
-          </div>
-          <div class="review-card review-testimonial">
-            <div class="review-header">
-              <div class="review-avatar">
-                <span>👩</span>
-              </div>
-              <div class="review-author">
-                <span class="author-name">Julia</span>
-                <span class="author-handle">Hat den Tag gerettet!</span>
-              </div>
-              <span class="review-date">Jan 31, 2023</span>
-            </div>
-            <p class="review-text">
-              Letzte Woche hatte ich einen wichtigen Termin geplant. Dank der App wurde ich rechtzeitig erinnert und
-              konnte alles vorbereiten. Ohne sie hätte ich es vergessen!
-            </p>
-          </div>
-        </div>
-        <div class="reviews-column">
-          <div class="review-card review-appstore">
-            <div class="review-header">
-              <span class="review-store-title">Beste App!</span>
-              <span class="review-date">Sep 7, 2024 • von AppFan123</span>
-            </div>
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">
-              Diese App ist einfach unglaublich. Sie macht genau das, was sie verspricht – und mehr. Die
-              Benutzeroberfläche ist wunderschön gestaltet, mit viel Liebe zum Detail.
-            </p>
-          </div>
-          <div class="review-card review-social">
-            <div class="review-header">
-              <div class="review-avatar avatar-small">
-                <span>🎬</span>
-              </div>
-              <div class="review-author">
-                <span class="author-name">Tech Reviewer</span>
-                <span class="author-handle">@techreviews • 8h</span>
-              </div>
-            </div>
-            <div class="review-video-placeholder">
-              <div class="video-overlay">
-                <span class="video-caption">Meine neue Lieblings-App</span>
-              </div>
-              <img src="/assets/iphone.png" alt="Video preview" class="video-preview-img">
-            </div>
-            <div class="review-social-footer">
-              <div class="social-avatars">
-                <span class="mini-avatar">👤</span>
-                <span class="mini-avatar">👤</span>
-                <span class="mini-avatar">👤</span>
-              </div>
-              <span class="social-stat">+3 Millionen Nutzer lieben diese App</span>
-              <button class="view-more-btn">View more +</button>
-            </div>
-          </div>
-        </div>
-        <div class="reviews-column">
-          <div class="review-card review-tweet">
-            <div class="review-header">
-              <div class="review-avatar">
-                <span>👨‍🎨</span>
-              </div>
-              <div class="review-author">
-                <span class="author-name">Peter Schmidt</span>
-                <span class="author-handle">@peterschmidt</span>
-              </div>
-            </div>
-            <p class="review-text">
-              Eine der durchdachtesten und am besten umgesetzten Apps, die ich je benutzt habe.
-            </p>
-          </div>
-          <div class="review-card review-appstore">
-            <div class="review-header">
-              <span class="review-store-title">Lieblings-App auf meinem Handy</span>
-              <span class="review-date">Aug 20, 2024 • a.beispiel</span>
-            </div>
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">
-              Es ist wie das alte Apple-Motto: Es funktioniert einfach. Sie macht genau das, was sie soll, nicht mehr,
-              und das fehlerfrei. Es ist wirklich meine Lieblings-App. Perfektion.
-            </p>
-          </div>
-          <div class="review-card review-tweet">
-            <div class="review-header">
-              <div class="review-avatar">
-                <span>👩‍💼</span>
-              </div>
-              <div class="review-author">
-                <span class="author-name">Anna Weber</span>
-                <span class="author-handle">@annaweber</span>
-              </div>
-            </div>
-            <p class="review-text">
-              Endlich eine App, die hält was sie verspricht! Nutze sie jeden Tag. 💯
-            </p>
-          </div>
+          </template>
         </div>
       </div>
     </section>
@@ -295,10 +246,22 @@
 <script setup lang="ts">
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
-import { inject } from 'vue'
+import { inject, computed } from 'vue'
 
 const config: any = inject('config')
 const mobile = window.innerWidth <= 900;
+
+const groupedReviews = computed(() => {
+  const reviews = (config.reviews?.reviews as any[]) || []
+  const cols: any[][] = [[], [], []]
+  reviews.forEach((review: any, index: number) => {
+    const col = cols[index % 3]
+    if (col) {
+      col.push(review)
+    }
+  })
+  return cols
+})
 
 const downloadOnAppStore = () => {
   location.href = config.iosLink
@@ -1195,7 +1158,6 @@ function goToDownload() {
   margin-bottom: 0;
 }
 
-/* App Store Review Style */
 .review-appstore .review-header {
   flex-direction: column;
   align-items: flex-start;

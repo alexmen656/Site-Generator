@@ -21,41 +21,41 @@
     { "platform": "x", "link": "https://x.com" }
   ],
   "feature_detail": {
-    "title": "Teile deine Daten mit<br />Freunden und Familie.",
-    "description": "Mit der Teilen-Funktion kannst du deine Informationen sofort mit deinen Liebsten teilen, damit sie immer auf dem Laufenden bleiben. Füge deine Kontakte einmal hinzu und teile automatisch – ganz ohne manuellen Aufwand."
+    "title": "Share your data with<br />friends and family.",
+    "description": "With the sharing feature, you can instantly share your information with your loved ones, ensuring they are always up to date. Add your contacts once and share automatically – with no manual effort required."
   },
   "feature_highlight": {
     "image1": "/assets/iphone.png",
     "image2": "/assets/iphone.png",
-    "title": "Nie wieder \"Kannst du mir die Infos schicken?\" hören.",
-    "description": "Wähle aus, mit wem du teilen möchtest. Deine Kontakte können dann selbst entscheiden, welche Benachrichtigungen sie erhalten möchten (z.B. bei Updates, Änderungen und mehr)."
+    "title": "Never hear \"Can you send me the info?\" again.",
+    "description": "Choose who you want to share with. Your contacts can then decide for themselves which notifications they want to receive (e.g., for updates, changes, and more)."
   },
   "showcase_title": "Learn the App know.",
   "feature_list": [
     {
       "icon": "/src/config/assets/iphone.png",
-      "title": "Produktivität",
-      "description": "Alles an einem Ort.<br />Immer griffbereit."
+      "title": "Productivity",
+      "description": "All in one place.<br />Always at hand."
     },
     {
       "icon": "/src/config/assets/iphone.png",
-      "title": "Organisation",
-      "description": "Smart sortiert.<br />Automatisch organisiert."
+      "title": "Organization",
+      "description": "Smartly sorted.<br />Automatically organized."
     },
     {
       "icon": "/src/config/assets/iphone.png",
-      "title": "Sicherheit",
-      "description": "Privat und sicher.<br />Von Anfang an."
+      "title": "Privacy",
+      "description": "Private and secure.<br />From the start."
     },
     {
       "icon": "/src/config/assets/iphone.png",
-      "title": "Synchronisation",
-      "description": "Überall dabei.<br />Auf allen Geräten."
+      "title": "Synchronization",
+      "description": "Always with you.<br />On all devices."
     },
     {
       "icon": "/src/config/assets/iphone.png",
-      "title": "Suche",
-      "description": "Blitzschnell finden.<br />Nie mehr suchen."
+      "title": "Search",
+      "description": "Find in a flash.<br />Never search again."
     }
   ],
   "articles": [
@@ -713,6 +713,66 @@
         "buttonText": "Download App"
       }
     }
+  },
+  "reviews": {
+    "title": "What our users say.",
+    "reviews": [
+      {
+        "type": "tweet",
+        "avatar": "👨‍💻",
+        "name": "Max Mustermann",
+        "handle": "@maxmuster",
+        "texts": [
+          "Since I started using this app, my productivity has doubled. Finally, I have everything under control!",
+          "Clear recommendation for everyone who wants to stay organized. 🙌"
+        ]
+      },
+      {
+        "type": "testimonial",
+        "avatar": "👩",
+        "name": "Julia",
+        "handle": "Saved the day!",
+        "date": "Jan 31, 2023",
+        "text": "Last week I had an important appointment planned. Thanks to the app, I was reminded in time and could prepare everything. Without it, I would have forgotten!"
+      },
+      {
+        "type": "appstore",
+        "title": "Best App!",
+        "date": "Sep 7, 2024 • by AppFan123",
+        "stars": 5,
+        "text": "This app is simply incredible. It does exactly what it promises — and more. The user interface is beautifully designed, with a lot of attention to detail."
+      },
+      {
+        "type": "social",
+        "avatar": "🎬",
+        "name": "Tech Reviewer",
+        "handle": "@techreviews • 8h",
+        "videoCaption": "My new favorite app",
+        "socialStat": "+3 million users love this app",
+        "viewMoreBtn": true
+      },
+      {
+        "type": "tweet",
+        "avatar": "👨‍🎨",
+        "name": "Peter Schmidt",
+        "handle": "@peterschmidt",
+        "text": "One of the most thoughtful and well-implemented apps I've ever used."
+      },
+      {
+        "type": "appstore",
+        "title": "My favorite app on my phone",
+        "date": "Aug 20, 2024 • a.example",
+        "stars": 5,
+        "text": "It's like the old Apple motto: it just works. It does exactly what it's supposed to do, nothing more, and flawlessly. It's really my favorite app. Perfection."
+      },
+      {
+        "type": "tweet",
+        "avatar": "👩‍💼",
+        "name": "Anna Weber",
+        "handle": "@annaweber",
+        "text": "Finally an app that delivers on its promise! I use it every day. 💯"
+      }
+    ]
   },
   "footer": {
     "section1": {
