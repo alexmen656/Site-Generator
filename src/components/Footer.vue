@@ -40,7 +40,7 @@
                     <div class="social-links">
                         <a v-for="social in socialIconLinks" :key="social.platform + social.link" :href="social.link"
                             class="social-link"
-                            :aria-label="social.platform[0].toUpperCase() + social.platform.slice(1).toLowerCase()">
+                            :aria-label="social.platform ? social.platform[0]?.toUpperCase() + social.platform.slice(1)?.toLowerCase() : ''">
                             <svg :viewBox="SOCIAL_ICON_VIEWBOX" width="20" height="20" fill="currentColor" role="img">
                                 <path :d="social.icon.path" />
                             </svg>
