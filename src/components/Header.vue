@@ -27,13 +27,14 @@ const config: any = inject('config')
 const router = useRouter();
 
 function getOS() {
-    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    const ua = navigator.userAgent || navigator.vendor || (window as any).opera || '';
 
     if (/android/i.test(ua)) return "android";
-    if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) return "ios";
+    if (/iPad|iPhone|iPod/.test(ua) && !(window as any).MSStream) return "ios";
 
     return "unknown";
 }
+
 
 const os = getOS();
 console.log("Detected OS:", os);
