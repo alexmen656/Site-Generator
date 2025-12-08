@@ -2,6 +2,8 @@
 
 Site Generator is a website builder where you can configure all texts and images in the `config.json` file. At the moment, it is primarily a website for Pocketz (pocketz.app), but I plan to add a CMS later to make it easily editable and reusable.
 
+As already said this should have been more of a general template for my app websites, therefor many data in blog and updates are jsut some mock data from config.json and not directly conenctd to Pocketz (I Focused more on designing and building the website than writing blog posts lol)
+
 ## Credits
 
 Parts of the site are inspired by following sites:
