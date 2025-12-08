@@ -4,7 +4,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <img :src="'/src/config/assets/' + config.appIcon" :alt="'Logo of ' + config.appName">
+                        <img :src="'/assets/' + config.appIcon" :alt="'Logo of ' + config.appName">
                     </div>
                 </div>
                 <div class="footer-column">
