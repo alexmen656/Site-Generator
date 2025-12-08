@@ -8,7 +8,7 @@
                     We respect your privacy and believe that the less we know about you,<br />
                     the better both for you and for us.
                 </p>
-                <p class="effective-date"><strong>Effective date:</strong> {{ effectiveDate }}</p>
+                <p class="effective-date"><strong>Effective date:</strong> {{ config.privacyPolicyEffectiveDate }}</p>
             </div>
         </section>
         <section class="content-section">
@@ -23,24 +23,10 @@
 <script setup lang="ts">
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
+import { inject } from 'vue'
 
-const effectiveDate = '17 December 2024';
-const text = `
-                    <p>
-                      blabla
-                    </p>
-
-                    <p>
-                    blabla and more blabla
-                    </p>
-
-                    <h2 class="section-title">This is about blbla</h2>
-
-                    <p>
-                        balababababbababab
-                    </p>
-                    `;
-
+const config: any = inject('config')
+const text: any = inject('privacy-policy')
 </script>
 
 <style scoped>

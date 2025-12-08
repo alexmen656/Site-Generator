@@ -5,10 +5,10 @@
             <div class="hero-content">
                 <h1 class="hero-title">Terms of use</h1>
                 <p class="hero-subtitle">
-                    Please read these terms carefully before using Paste.<br />
+                    Please read these terms carefully before using {{ config.appName }}.<br />
                     By using our service, you agree to be bound by these terms.
                 </p>
-                <p class="effective-date"><strong>Effective date:</strong> {{ effectiveDate }}</p>
+                <p class="effective-date"><strong>Effective date:</strong> {{ config.termsOfUseEffectiveDate }}</p>
             </div>
         </section>
         <section class="content-section">
@@ -24,29 +24,10 @@
 <script setup lang="ts">
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
+import { inject } from 'vue'
 
-const effectiveDate = '17 December 2024';
-const text = `
-     <h2 class="section-title">General Information</h2>
-                    <p>
-                       bllbvlblblbllb
-                    </p>
-
-                    <p>
-                      gjherwhiuerfghiuefghiuvefhiu
-                    </p>
-
-                    <h2 class="section-title">Some blabla</h2>
-
-                    <p>
-                       lalalallalalal
-                    </p>
-
-                    <h2 class="section-title">User blbla</h2>
-
-                    <p>
-                      user agrees to blabla
-                    </p>`;
+const config: any = inject('config')
+const text: any = inject('terms-of-use')
 </script>
 
 <style scoped>
